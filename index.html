@@ -1,0 +1,1427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CCL</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <section class="background-image"></section>
+    <header>
+        <h1>CCL SCD MONITORING SYSTEM</h1>
+    </header>
+
+    <section class="login-background"></section>
+
+    <nav>
+        <div id="location-content">
+            <p id="location"><strong>Location: </strong></p>
+            <select id="location-choice">
+                <option value="default">Select a location</option>
+                <option value="dsm">DSM Office</option>
+            </select>
+        </div>
+    </nav>
+
+    <section id="default-page">
+        <div id="default-top-section">
+            <div>
+                <h1>STATUS OF SCD</h1>
+            </div>
+            <div id="default-status-menu">
+                <section id="default-status-section">
+                    <div id="default-SCD1-section">
+                        <h3>SCD ONE:</h3>
+                        <div id="default-status1-distance">
+                            <p>Distance: </p>
+                            <p id="default-distance1"></p>
+                        </div>
+                        <div id="default-status1">
+                            <div id="default-status1">
+                                <div id="default-present1">
+                                    <h3>PRESENT</h3>
+                                </div>
+                
+                                <div id="default-removed1">
+                                     <h3>REMOVED</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+    
+    
+                    <div id="default-SCD2-section">
+                        <h3>SCD TWO:</h3>
+                        <div id="default-status2-distance">
+                            <p>Distance: </p>
+                            <p id="default-distance2"></p>
+                        </div>
+                        <div id="default-status2">
+                            <div id="default-present2">
+                                <h3>PRESENT</h3>
+                            </div>
+            
+                            <div id="default-removed2">
+                                 <h3>REMOVED</h3>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="default-SCD3-section">
+                        <h3>SCD THREE:</h3>
+                        <div id="default-status3-distance">
+                            <p>Distance: </p>
+                            <p id="default-distance3"></p>
+                        </div>
+                        <div id="default-status3">
+                            <div id="default-present3">
+                                <h3>PRESENT</h3>
+                            </div>
+            
+                            <div id="default-removed3">
+                                 <h3>REMOVED</h3>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="default-SCD4-section">
+                        <h3>SCD FOUR:</h3>
+                        <div id="default-status4-distance">
+                            <p>Distance: </p>
+                            <p id="default-distance4"></p>
+                        </div>
+                        <div id="default-status4">
+                            <div id="default-present4">
+                                <h3>PRESENT</h3>
+                            </div>
+            
+                            <div id="default-removed4">
+                                 <h3>REMOVED</h3>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+        <div id="default-bottom-section">
+            <div>
+                <h1>TRACK OCCUPATION AUTHORIZATION (TOA) FORMS</h1>
+            </div>
+
+            <div id="default-top-bar">
+                <div class="user">
+                    <h2>User: </h2>
+                    <select id="default-username">
+                        <option value="default-user">Select</option>
+                        <option value="default-pm-pic">PM/PIC</option>
+                        <option value="default-moc">MOC (DO)</option>
+                    </select>
+                </div>
+
+                <div class="selection-border">
+                    <h2>Number of SCD:</h2>
+                    <nav id="default-scd-number-option">
+                        <select id="default-0scd-number">
+                            <option value="dsm-0scd">Select</option>
+                        </select>
+                    </nav>
+
+                    <nav id="default-scd-number-pm-pic-option" style="display: none;">
+                        <select id="default-scd-number">
+                            <option value="default-0scd">Select</option>
+                            <option value="default-1scd">1</option>
+                            <option value="default-2scd">2</option>
+                            <option value="default-3scd">3</option>
+                            <option value="default-4scd">4</option>
+                        </select>
+                    </nav>
+
+                    <nav id="default-scd-number-moc-option" style="display: none;">
+                        <select id="default-scd-number-moc">
+                            <option value="default-0scd">Select</option>
+                            <option value="default-1scd">1</option>
+                            <option value="default-2scd">2</option>
+                            <option value="default-3scd">3</option>
+                            <option value="default-4scd">4</option>
+                        </select>
+                    </nav>
+                    
+                </div>
+
+                <div class="selection-border">
+                    <h2>SCD:</h2>
+
+                    <nav id="default-scd-selection-pm-pic">
+                        <select id="default-scd-pm-pic">
+                            <option value="default-0scd">Select</option>
+                        </select>
+                    </nav>
+
+                    <nav id="default-1scd-selection-pm-pic" style="display: none;">
+                        <select id="default-1scd-pm-pic">
+                            <option value="default-scd0">Select</option>
+                            <option value="default-scd1">ONE</option>
+                            <option value="default-scd2">TWO</option>
+                            <option value="default-scd3">THREE</option>
+                            <option value="default-scd4">FOUR</option>
+                        </select>
+                    </nav>
+
+                    <nav id="default-2scd-selection-pm-pic" style="display: none;">
+                        <select id="default-2scd-pm-pic">
+                            <option value="default-scd0">Select</option>
+                            <option value="default-scd1-2">ONE & TWO</option>
+                            <option value="default-scd1-3">ONE & THREE</option>
+                            <option value="default-scd1-4">ONE & FOUR</option>
+                            <option value="default-scd2-3">TWO & THREE</option>
+                            <option value="default-scd2-4">TWO & FOUR</option>
+                            <option value="default-scd3-4">THREE & FOUR</option>
+                        </select>
+                    </nav>
+
+                    <nav id="default-3scd-selection-pm-pic" style="display: none;">
+                        <select id="default-3scd-pm-pic">
+                            <option value="default-scd0">Select</option>
+                            <option value="default-scd1-2-3">ONE & TWO & THREE</option>
+                            <option value="default-scd1-2-4">ONE & TWO & FOUR</option>
+                            <option value="default-scd1-3-4">ONE & THREE & FOUR</option>
+                            <option value="default-scd2-3-4">TWO & THREE & FOUR</option>
+                        </select>
+                    </nav>
+    
+                    <nav id="default-4scd-selection-pm-pic" style="display: none;">
+                        <select id="default-4scd-pm-pic">
+                            <option value="default-scd0">Select</option>
+                            <option value="default-scd1-2-3-4">ONE & TWO & THREE & FOUR</option>
+                        </select>
+                    </nav>
+
+                    <nav id="default-scd-selection-moc" style="display: none;">
+                        <select id="default-scd-moc">
+                            <option value="default-0scd">Select</option>
+                        </select>
+                    </nav>
+
+                    <nav id="default-1scd-selection-moc" style="display: none;">
+                        <select id="default-1scd-moc">
+                            <option value="default-scd0">Select</option>
+                            <option value="default-scd1">ONE</option>
+                            <option value="default-scd2">TWO</option>
+                            <option value="default-scd3">THREE</option>
+                            <option value="default-scd4">FOUR</option>
+                        </select>
+                    </nav>
+
+                    <nav id="default-2scd-selection-moc" style="display: none;">
+                        <select id="default-2scd-moc">
+                            <option value="default-scd0">Select</option>
+                            <option value="default-scd1-2">ONE & TWO</option>
+                            <option value="default-scd1-3">ONE & THREE</option>
+                            <option value="default-scd1-4">ONE & FOUR</option>
+                            <option value="default-scd2-3">TWO & THREE</option>
+                            <option value="default-scd2-4">TWO & FOUR</option>
+                            <option value="default-scd3-4">THREE & FOUR</option>
+                        </select>
+                    </nav>
+
+                    <nav id="default-3scd-selection-moc" style="display: none;">
+                        <select id="default-3scd-moc">
+                            <option value="default-scd0">Select</option>
+                            <option value="default-scd1-2-3">ONE & TWO & THREE</option>
+                            <option value="default-scd1-2-4">ONE & TWO & FOUR</option>
+                            <option value="default-scd1-3-4">ONE & THREE & FOUR</option>
+                            <option value="default-scd2-3-4">TWO & THREE & FOUR</option>
+                        </select>
+                    </nav>
+    
+                    <nav id="default-4scd-selection-moc" style="display: none;">
+                        <select id="default-4scd-moc">
+                            <option value="default-scd0">Select</option>
+                            <option value="default-scd1-2-3-4">ONE & TWO & THREE & FOUR</option>
+                        </select>
+                    </nav>
+                </div>
+            </div>
+
+            <div id="default-bottom-bar-section">
+                <div id="default-bottom-bar-pm-pic" style="display: none;">
+                    <div id="default-bottom-selection-pm-pic" style="display: none;">
+                        <div id="default-part1-loan">
+                            <h4>LOANING OF SCD(S) FORMS</h4>
+                            <div id="default-part1-form-loan">
+                                <h6>TOA PART ONE</h6>
+        
+                                <div id="default-part1-form-loan-option" style="display: none;">
+                                    <div id="default-scd1-loan" style="display: none;">
+                                        <h5>SCD ONE</h5>
+                                    </div>
+            
+                                    <div id="default-scd2-loan" style="display: none;">
+                                        <h5>SCD TWO</h5>
+                                    </div>
+            
+                                    <div id="default-scd3-loan" style="display: none;">
+                                        <h5>SCD THREE</h5>
+                                    </div>
+            
+                                    <div id="default-scd4-loan" style="display: none;">
+                                        <h5>SCD FOUR</h5>
+                                    </div>
+                                </div>
+        
+                            </div>
+                        </div>
+        
+                        <div id="default-part3-return">
+                            <h4>RETURNING OF SCD(S) FORMS</h4>
+        
+                            <div id="default-part3-form-return">
+                                <h6>TOA PART THREE</h6>
+                                <div id="default-part3-form-return-option" style="display: none;">
+                                    <div id="default-scd1-return" style="display: none;">
+                                        <h5>SCD ONE</h5>
+                                    </div>
+            
+                                    <div id="default-scd2-return" style="display: none;">
+                                        <h5>SCD TWO</h5>
+                                    </div>
+            
+                                    <div id="default-scd3-return" style="display: none;">
+                                        <h5>SCD THREE</h5>
+                                    </div>
+            
+                                    <div id="default-scd4-return" style="display: none;">
+                                        <h5>SCD FOUR</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <div id="default-bottom-bar-2scd-pm-pic" style="display: none;">
+                    <div id="default-bottom-selection-2scd-pm-pic" style="display: none;">
+                        <div id="default-part1-loan-2scd">
+                            <h4>LOANING OF SCD(S) FORMS</h4>
+        
+                            <div id="default-part1-form-loan-2scd">
+                                <h6>TOA PART ONE</h6>
+        
+                                <div id="default-part1-form-loan-option-2scd" style="display: none;">
+                                    <div id="default-scd1-2-loan" style="display: none;">
+                                        <h5>SCD ONE & TWO</h5>
+                                    </div>
+            
+                                    <div id="default-scd1-3-loan" style="display: none;">
+                                        <h5>SCD ONE & THREE</h5>
+                                    </div>
+            
+                                    <div id="default-scd1-4-loan" style="display: none;">
+                                        <h5>SCD ONE & FOUR</h5>
+                                    </div>
+            
+                                    <div id="default-scd2-3-loan" style="display: none;">
+                                        <h5>SCD TWO & THREE</h5>
+                                    </div>
+    
+                                    <div id="default-scd2-4-loan" style="display: none;">
+                                        <h5>SCD TWO & FOUR</h5>
+                                    </div>
+    
+                                    <div id="default-scd3-4-loan" style="display: none;">
+                                        <h5>SCD THREE & FOUR</h5>
+                                    </div>
+                                </div>
+        
+                            </div>
+                        </div>
+        
+                        <div id="default-part3-return-2scd">
+                            <h4>RETURNING OF SCD(S) FORMS</h4>
+    
+                            <div id="default-part3-form-return-2scd">
+                                <h6>TOA PART THREE</h6>
+    
+                                <div id="default-part3-form-return-option-2scd" style="display: none;">
+                                    <div id="default-scd1-2-return" style="display: none;">
+                                        <h5>SCD ONE & TWO</h5>
+                                    </div>
+            
+                                    <div id="default-scd1-3-return" style="display: none;">
+                                        <h5>SCD ONE & THREE</h5>
+                                    </div>
+            
+                                    <div id="default-scd1-4-return" style="display: none;">
+                                        <h5>SCD ONE & FOUR</h5>
+                                    </div>
+            
+                                    <div id="default-scd2-3-return" style="display: none;">
+                                        <h5>SCD TWO & THREE</h5>
+                                    </div>
+        
+                                    <div id="default-scd2-4-return" style="display: none;">
+                                        <h5>SCD TWO & FOUR</h5>
+                                    </div>
+        
+                                    <div id="default-scd3-4-return" style="display: none;">
+                                        <h5>SCD THREE & FOUR</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        
+    
+                <div id="default-bottom-bar-3scd-pm-pic" style="display: none;">
+                    <div id="default-bottom-selection-3scd-pm-pic" style="display: none;">
+                        <div id="default-part1-loan-3scd">
+                            <h4>LOANING OF SCD(S) FORMS</h4>
+        
+                            <div id="default-part1-form-loan-3scd">
+                                <h6>TOA PART ONE</h6>
+        
+                                <div id="default-part1-form-loan-option-3scd" style="display: none;">
+                                    <div id="default-scd1-2-3-loan" style="display: none;">
+                                        <h5>SCD ONE & TWO & THREE</h5>
+                                    </div>
+            
+                                    <div id="default-scd1-2-4-loan" style="display: none;">
+                                        <h5>SCD ONE & TWO & FOUR</h5>
+                                    </div>
+            
+                                    <div id="default-scd1-3-4-loan" style="display: none;">
+                                        <h5>SCD ONE & THREE & FOUR</h5>
+                                    </div>
+            
+                                    <div id="default-scd2-3-4-loan" style="display: none;">
+                                        <h5>SCD TWO & THREE & FOUR</h5>
+                                    </div>
+                                </div>
+        
+                            </div>
+                        </div>
+        
+                        <div id="default-part3-return-3scd">
+                            <h4>RETURNING OF SCD(S) FORMS</h4>
+    
+                            <div id="default-part3-form-return-3scd">
+                                <h6>TOA PART THREE</h6>
+    
+                                <div id="default-part3-form-return-option-3scd" style="display: none;">
+                                    <div id="default-scd1-2-3-return" style="display: none;">
+                                        <h5>SCD ONE & TWO & THREE</h5>
+                                    </div>
+            
+                                    <div id="default-scd1-2-4-return" style="display: none;">
+                                        <h5>SCD ONE & TWO & FOUR</h5>
+                                    </div>
+            
+                                    <div id="default-scd1-3-4-return" style="display: none;">
+                                        <h5>SCD ONE & THREE & FOUR</h5>
+                                    </div>
+            
+                                    <div id="default-scd2-3-4-return" style="display: none;">
+                                        <h5>SCD TWO & THREE & FOUR</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+    
+                <div id="default-bottom-bar-4scd-pm-pic" style="display: none;">
+                    <div id="default-bottom-selection-4scd-pm-pic" style="display: none;">
+                        <div id="default-part1-loan-4scd">
+        
+                            <h4>LOANING OF SCD(S) FORMS</h4>
+        
+                            <div id="default-part1-form-loan-4scd">
+                                <h6>TOA PART ONE</h6>
+        
+                                <div id="default-part1-form-loan-option-4scd" style="display: none;">
+                                    <div id="default-scd1-2-3-4-loan" style="display: none;">
+                                        <h5>SCD ONE & TWO & THREE & FOUR</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+        
+                        <div id="default-part3-return-4scd">
+                            <h4>RETURNING OF SCD(S) FORMS</h4>
+    
+                            <div id="default-part3-form-return-4scd">
+                                <h6>TOA PART THREE</h6>
+    
+                                <div id="default-part3-form-return-option-4scd" style="display: none;">
+                                    <div id="default-scd1-2-3-4-return" style="display: none;">
+                                        <h5>SCD ONE & TWO & THREE & FOUR</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <div id="default-bottom-bar-moc" style="display: none;">
+                    <div id="default-bottom-selection-moc" style="display: none;">
+                        <div id="default-part2-loan">
+                            <h4>LOANING OF SCD(S) FORMS</h4>
+                            <div id="default-part2-form-loan">
+                                <h6>TOA PART TWO</h6>
+        
+                                <div id="default-part2-form-loan-option" style="display: none;">
+                                    <div id="default-scd1-loan-moc" style="display: none;">
+                                        <h5>SCD ONE</h5>
+                                    </div>
+            
+                                    <div id="default-scd2-loan-moc" style="display: none;">
+                                        <h5>SCD TWO</h5>
+                                    </div>
+            
+                                    <div id="default-scd3-loan-moc" style="display: none;">
+                                        <h5>SCD THREE</h5>
+                                    </div>
+            
+                                    <div id="default-scd4-loan-moc" style="display: none;">
+                                        <h5>SCD FOUR</h5>
+                                    </div>
+                                </div>
+        
+                            </div>
+                        </div>
+        
+                        <div id="default-part4-return">
+                            <h4>RETURNING OF SCD(S) FORMS</h4>
+        
+                            <div id="default-part4-form-return">
+                                <h6>TOA PART FOUR</h6>
+                                <div id="default-part4-form-return-option" style="display: none;">
+                                    <div id="default-scd1-return-moc" style="display: none;">
+                                        <h5>SCD ONE</h5>
+                                    </div>
+            
+                                    <div id="default-scd2-return-moc" style="display: none;">
+                                        <h5>SCD TWO</h5>
+                                    </div>
+            
+                                    <div id="default-scd3-return-moc" style="display: none;">
+                                        <h5>SCD THREE</h5>
+                                    </div>
+            
+                                    <div id="default-scd4-return-moc" style="display: none;">
+                                        <h5>SCD FOUR</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <div id="default-bottom-bar-2scd-moc" style="display: none;">
+                    <div id="default-bottom-selection-2scd-moc" style="display: none;">
+                        <div id="default-part2-loan-2scd">
+                            <h4>LOANING OF SCD(S) FORMS</h4>
+        
+                            <div id="default-part2-form-loan-2scd">
+                                <h6>TOA PART TWO</h6>
+        
+                                <div id="default-part2-form-loan-option-2scd" style="display: none;">
+                                    <div id="default-scd1-2-loan-moc" style="display: none;">
+                                        <h5>SCD ONE & TWO</h5>
+                                    </div>
+            
+                                    <div id="default-scd1-3-loan-moc" style="display: none;">
+                                        <h5>SCD ONE & THREE</h5>
+                                    </div>
+            
+                                    <div id="default-scd1-4-loan-moc" style="display: none;">
+                                        <h5>SCD ONE & FOUR</h5>
+                                    </div>
+            
+                                    <div id="default-scd2-3-loan-moc" style="display: none;">
+                                        <h5>SCD TWO & THREE</h5>
+                                    </div>
+    
+                                    <div id="default-scd2-4-loan-moc" style="display: none;">
+                                        <h5>SCD TWO & FOUR</h5>
+                                    </div>
+    
+                                    <div id="default-scd3-4-loan-moc" style="display: none;">
+                                        <h5>SCD THREE & FOUR</h5>
+                                    </div>
+                                </div>
+        
+                            </div>
+                        </div>
+        
+                        <div id="default-part4-return-2scd">
+                            <h4>RETURNING OF SCD(S) FORMS</h4>
+    
+                            <div id="default-part4-form-return-2scd">
+                                <h6>TOA PART FOUR</h6>
+    
+                                <div id="default-part4-form-return-option-2scd" style="display: none;">
+                                    <div id="default-scd1-2-return-moc" style="display: none;">
+                                        <h5>SCD ONE & TWO</h5>
+                                    </div>
+            
+                                    <div id="default-scd1-3-return-moc" style="display: none;">
+                                        <h5>SCD ONE & THREE</h5>
+                                    </div>
+            
+                                    <div id="default-scd1-4-return-moc" style="display: none;">
+                                        <h5>SCD ONE & FOUR</h5>
+                                    </div>
+            
+                                    <div id="default-scd2-3-return-moc" style="display: none;">
+                                        <h5>SCD TWO & THREE</h5>
+                                    </div>
+        
+                                    <div id="default-scd2-4-return-moc" style="display: none;">
+                                        <h5>SCD TWO & FOUR</h5>
+                                    </div>
+        
+                                    <div id="default-scd3-4-return-moc" style="display: none;">
+                                        <h5>SCD THREE & FOUR</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        
+    
+                <div id="default-bottom-bar-3scd-moc" style="display: none;">
+                    <div id="default-bottom-selection-3scd-moc" style="display: none;">
+                        <div id="default-part2-loan-3scd">
+                            <h4>LOANING OF SCD(S) FORMS</h4>
+        
+                            <div id="default-part2-form-loan-3scd">
+                                <h6>TOA PART TWO</h6>
+        
+                                <div id="default-part2-form-loan-option-3scd" style="display: none;">
+                                    <div id="default-scd1-2-3-loan-moc" style="display: none;">
+                                        <h5>SCD ONE & TWO & THREE</h5>
+                                    </div>
+            
+                                    <div id="default-scd1-2-4-loan-moc" style="display: none;">
+                                        <h5>SCD ONE & TWO & FOUR</h5>
+                                    </div>
+            
+                                    <div id="default-scd1-3-4-loan-moc" style="display: none;">
+                                        <h5>SCD ONE & THREE & FOUR</h5>
+                                    </div>
+            
+                                    <div id="default-scd2-3-4-loan-moc" style="display: none;">
+                                        <h5>SCD TWO & THREE & FOUR</h5>
+                                    </div>
+                                </div>
+        
+                            </div>
+                        </div>
+        
+                        <div id="default-part4-return-3scd">
+                            <h4>RETURNING OF SCD(S) FORMS</h4>
+    
+                            <div id="default-part4-form-return-3scd">
+                                <h6>TOA PART FOUR</h6>
+    
+                                <div id="default-part4-form-return-option-3scd" style="display: none;">
+                                    <div id="default-scd1-2-3-return-moc" style="display: none;">
+                                        <h5>SCD ONE & TWO & THREE</h5>
+                                    </div>
+            
+                                    <div id="default-scd1-2-4-return-moc" style="display: none;">
+                                        <h5>SCD ONE & TWO & FOUR</h5>
+                                    </div>
+            
+                                    <div id="default-scd1-3-4-return-moc" style="display: none;">
+                                        <h5>SCD ONE & THREE & FOUR</h5>
+                                    </div>
+            
+                                    <div id="default-scd2-3-4-return-moc" style="display: none;">
+                                        <h5>SCD TWO & THREE & FOUR</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+    
+                <div id="default-bottom-bar-4scd-moc" style="display: none;">
+                    <div id="default-bottom-selection-4scd-moc" style="display: none;">
+                        <div id="default-part2-loan-4scd">
+        
+                            <h4>LOANING OF SCD(S) FORMS</h4>
+        
+                            <div id="default-part2-form-loan-4scd">
+                                <h6>TOA PART TWO</h6>
+        
+                                <div id="default-part2-form-loan-option-4scd" style="display: none;">
+                                    <div id="default-scd1-2-3-4-loan-moc" style="display: none;">
+                                        <h5>SCD ONE & TWO & THREE & FOUR</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+        
+                        <div id="default-part4-return-4scd">
+                            <h4>RETURNING OF SCD(S) FORMS</h4>
+    
+                            <div id="default-part4-form-return-4scd">
+                                <h6>TOA PART FOUR</h6>
+    
+                                <div id="default-part4-form-return-option-4scd" style="display: none;">
+                                    <div id="default-scd1-2-3-4-return-moc" style="display: none;">
+                                        <h5>SCD ONE & TWO & THREE & FOUR</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="dsm-page" style="display: none;">
+        <div id="dsm-top-section">
+            <div>
+                <h1>STATUS OF SCD</h1>
+            </div>
+            <div id="dsm-status-menu">
+                <section id="dsm-status-section">
+                    <div id="dsm-SCD1-section">
+                        <h3>SCD ONE:</h3>
+                        <div id="dsm-status1-distance">
+                            <p>Distance: </p>
+                            <p id="dsm-distance1"></p>
+                        </div>
+                        <div id="dsm-status1">
+                            <div id="dsm-status1">
+                                <div id="dsm-present1">
+                                    <h3>PRESENT</h3>
+                                </div>
+                
+                                <div id="dsm-removed1">
+                                     <h3>REMOVED</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+    
+    
+                    <div id="dsm-SCD2-section">
+                        <h3>SCD TWO:</h3>
+                        <div id="dsm-status2-distance">
+                            <p>Distance: </p>
+                            <p id="dsm-distance2"></p>
+                        </div>
+                        <div id="dsm-status2">
+                            <div id="dsm-present2">
+                                <h3>PRESENT</h3>
+                            </div>
+            
+                            <div id="dsm-removed2">
+                                 <h3>REMOVED</h3>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="dsm-SCD3-section">
+                        <h3>SCD THREE:</h3>
+                        <div id="dsm-status3-distance">
+                            <p>Distance: </p>
+                            <p id="dsm-distance3"></p>
+                        </div>
+                        <div id="dsm-status3">
+                            <div id="dsm-present3">
+                                <h3>PRESENT</h3>
+                            </div>
+            
+                            <div id="dsm-removed3">
+                                 <h3>REMOVED</h3>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="dsm-SCD4-section">
+                        <h3>SCD FOUR:</h3>
+                        <div id="dsm-status4-distance">
+                            <p>Distance: </p>
+                            <p id="dsm-distance4"></p>
+                        </div>
+                        <div id="dsm-status4">
+                            <div id="dsm-present4">
+                                <h3>PRESENT</h3>
+                            </div>
+            
+                            <div id="dsm-removed4">
+                                 <h3>REMOVED</h3>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+        <div id="dsm-bottom-section">
+            <div>
+                <h1>TRACK OCCUPATION AUTHORIZATION (TOA) FORMS</h1>
+            </div>
+
+            <div id="dsm-top-bar">
+                <div class="user">
+                    <h2>User: </h2>
+                    <select id="dsm-username">
+                        <option value="dsm-user">Select</option>
+                        <option value="dsm-pm-pic">PM/PIC</option>
+                        <option value="dsm-moc">MOC (DO)</option>
+                    </select>
+                </div>
+    
+                <div class="selection-border">
+                    <h2>Number of SCD:</h2>
+                    <nav id="dsm-scd-number-option">
+                        <select id="dsm-0scd-number">
+                            <option value="dsm-0scd">Select</option>
+                        </select>
+                    </nav>
+                    
+                    <nav id="dsm-scd-number-pm-pic-option" style="display: none;">
+                        <select id="dsm-scd-number">
+                            <option value="dsm-0scd">Select</option>
+                            <option value="dsm-1scd">1</option>
+                            <option value="dsm-2scd">2</option>
+                            <option value="dsm-3scd">3</option>
+                            <option value="dsm-4scd">4</option>
+                        </select>
+                    </nav>
+    
+                    <nav id="dsm-scd-number-moc-option" style="display: none;">
+                        <select id="dsm-scd-number-moc">
+                            <option value="dsm-0scd">Select</option>
+                            <option value="dsm-1scd">1</option>
+                            <option value="dsm-2scd">2</option>
+                            <option value="dsm-3scd">3</option>
+                            <option value="dsm-4scd">4</option>
+                        </select>
+                    </nav>
+                    
+                </div>
+    
+                <div class="selection-border">
+                    <h2>SCD:</h2>
+    
+                    <nav id="dsm-scd-selection-pm-pic">
+                        <select id="dsm-scd-pm-pic">
+                            <option value="dsm-0scd">Select</option>
+                        </select>
+                    </nav>
+    
+                    <nav id="dsm-1scd-selection-pm-pic" style="display: none;">
+                        <select id="dsm-1scd-pm-pic">
+                            <option value="dsm-scd0">Select</option>
+                            <option value="dsm-scd1">ONE</option>
+                            <option value="dsm-scd2">TWO</option>
+                            <option value="dsm-scd3">THREE</option>
+                            <option value="dsm-scd4">FOUR</option>
+                        </select>
+                    </nav>
+    
+                    <nav id="dsm-2scd-selection-pm-pic" style="display: none;">
+                        <select id="dsm-2scd-pm-pic">
+                            <option value="dsm-scd0">Select</option>
+                            <option value="dsm-scd1-2">ONE & TWO</option>
+                            <option value="dsm-scd1-3">ONE & THREE</option>
+                            <option value="dsm-scd1-4">ONE & FOUR</option>
+                            <option value="dsm-scd2-3">TWO & THREE</option>
+                            <option value="dsm-scd2-4">TWO & FOUR</option>
+                            <option value="dsm-scd3-4">THREE & FOUR</option>
+                        </select>
+                    </nav>
+    
+                    <nav id="dsm-3scd-selection-pm-pic" style="display: none;">
+                        <select id="dsm-3scd-pm-pic">
+                            <option value="dsm-scd0">Select</option>
+                            <option value="dsm-scd1-2-3">ONE & TWO & THREE</option>
+                            <option value="dsm-scd1-2-4">ONE & TWO & FOUR</option>
+                            <option value="dsm-scd1-3-4">ONE & THREE & FOUR</option>
+                            <option value="dsm-scd2-3-4">TWO & THREE & FOUR</option>
+                        </select>
+                    </nav>
+    
+                    <nav id="dsm-4scd-selection-pm-pic" style="display: none;">
+                        <select id="dsm-4scd-pm-pic">
+                            <option value="dsm-scd0">Select</option>
+                            <option value="dsm-scd1-2-3-4">ONE & TWO & THREE & FOUR</option>
+                        </select>
+                    </nav>
+    
+                    <nav id="dsm-scd-selection-moc" style="display: none;">
+                        <select id="dsm-scd-moc">
+                            <option value="dsm-0scd">Select</option>
+                        </select>
+                    </nav>
+    
+                    <nav id="dsm-1scd-selection-moc" style="display: none;">
+                        <select id="dsm-1scd-moc">
+                            <option value="dsm-scd0">Select</option>
+                            <option value="dsm-scd1">ONE</option>
+                            <option value="dsm-scd2">TWO</option>
+                            <option value="dsm-scd3">THREE</option>
+                            <option value="dsm-scd4">FOUR</option>
+                        </select>
+                    </nav>
+    
+                    <nav id="dsm-2scd-selection-moc" style="display: none;">
+                        <select id="dsm-2scd-moc">
+                            <option value="dsm-scd0">Select</option>
+                            <option value="dsm-scd1-2">ONE & TWO</option>
+                            <option value="dsm-scd1-3">ONE & THREE</option>
+                            <option value="dsm-scd1-4">ONE & FOUR</option>
+                            <option value="dsm-scd2-3">TWO & THREE</option>
+                            <option value="dsm-scd2-4">TWO & FOUR</option>
+                            <option value="dsm-scd3-4">THREE & FOUR</option>
+                        </select>
+                    </nav>
+    
+                    <nav id="dsm-3scd-selection-moc" style="display: none;">
+                        <select id="dsm-3scd-moc">
+                            <option value="dsm-scd0">Select</option>
+                            <option value="dsm-scd1-2-3">ONE & TWO & THREE</option>
+                            <option value="dsm-scd1-2-4">ONE & TWO & FOUR</option>
+                            <option value="dsm-scd1-3-4">ONE & THREE & FOUR</option>
+                            <option value="dsm-scd2-3-4">TWO & THREE & FOUR</option>
+                        </select>
+                    </nav>
+    
+                    <nav id="dsm-4scd-selection-moc" style="display: none;">
+                        <select id="dsm-4scd-moc">
+                            <option value="dsm-scd0">Select</option>
+                            <option value="dsm-scd1-2-3-4">ONE & TWO & THREE & FOUR</option>
+                        </select>
+                    </nav>
+                </div>
+            </div>
+
+
+            <div id="dsm-bottom-bar-section">
+                <div id="dsm-bottom-bar-pm-pic" style="display: none;">
+                    <div id="dsm-bottom-selection-pm-pic" style="display: none;">
+                        <div id="dsm-part1-loan">
+                            <h4>LOANING OF SCD(S) FORMS</h4>
+                            <div id="dsm-part1-form-loan">
+                                <h6>TOA PART ONE</h6>
+        
+                                <div id="dsm-part1-form-loan-option" style="display: none;">
+                                    <div id="dsm-scd1-loan" style="display: none; cursor: pointer;">
+                                        <h5>SCD ONE</h5>
+                                        <div id="reminder-one"><em>Click here to complete</em></div>
+                                    </div>
+            
+                                    <div id="dsm-scd2-loan" style="display: none; cursor: pointer;">
+                                        <h5>SCD TWO</h5>
+                                        <div id="reminder-two"><em>Click here to complete</em></div>
+                                    </div>
+            
+                                    <div id="dsm-scd3-loan" style="display: none; cursor: pointer;">
+                                        <h5>SCD THREE</h5>
+                                        <div id="reminder-three"><em>Click here to complete</em></div>
+                                    </div>
+            
+                                    <div id="dsm-scd4-loan" style="display: none; cursor: pointer;">
+                                        <h5>SCD FOUR</h5>
+                                        <div id="reminder-four"><em>Click here to complete</em></div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+        
+                        <div id="dsm-part3-return">
+                            <h4>RETURNING OF SCD(S) FORMS</h4>
+        
+                            <div id="dsm-part3-form-return">
+                                <h6>TOA PART THREE</h6>
+                                <div id="dsm-part3-form-return-option" style="display: none;">
+                                    <div id="dsm-scd1-return" style="display: none;" data-href="https://forms.office.com/r/gUSD5Z1Q5K">
+                                        <h5>SCD ONE</h5>
+                                    </div>
+            
+                                    <div id="dsm-scd2-return" style="display: none;"  data-href="https://forms.office.com/r/tkFK6RAqJi">
+                                        <h5>SCD TWO</h5>
+                                    </div>
+            
+                                    <div id="dsm-scd3-return" style="display: none;" data-href="https://forms.office.com/r/yADPZnF4Pw">
+                                        <h5>SCD THREE</h5>
+                                    </div>
+            
+                                    <div id="dsm-scd4-return" style="display: none;" data-href="https://forms.office.com/r/VMUrhCqrfsxxrrfff4">
+                                        <h5>SCD FOUR</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <div id="dsm-bottom-bar-2scd-pm-pic" style="display: none;">
+                    <div id="dsm-bottom-selection-2scd-pm-pic" style="display: none;">
+                        <div id="dsm-part1-loan-2scd">
+                            <h4>LOANING OF SCD(S) FORMS</h4>
+        
+                            <div id="dsm-part1-form-loan-2scd">
+                                <h6>TOA PART ONE</h6>
+        
+                                <div id="dsm-part1-form-loan-option-2scd" style="display: none;">
+                                    <div id="dsm-scd1-2-loan" style="display: none; cursor: pointer;">
+                                        <h5>SCD ONE & TWO</h5>
+                                        <div id="reminder-five"><em>Click here to complete</em></div>
+                                    </div>
+            
+                                    <div id="dsm-scd1-3-loan" style="display: none; cursor: pointer;">
+                                        <h5>SCD ONE & THREE</h5>
+                                        <div id="reminder-six"><em>Click here to complete</em></div>
+                                    </div>
+            
+                                    <div id="dsm-scd1-4-loan" style="display: none; cursor: pointer;">
+                                        <h5>SCD ONE & FOUR</h5>
+                                        <div id="reminder-seven"><em>Click here to complete</em></div>
+                                    </div>
+            
+                                    <div id="dsm-scd2-3-loan" style="display: none; cursor: pointer;">
+                                        <h5>SCD TWO & THREE</h5>
+                                        <div id="reminder-eight"><em>Click here to complete</em></div>
+                                    </div>
+    
+                                    <div id="dsm-scd2-4-loan" style="display: none; cursor: pointer;">
+                                        <h5>SCD TWO & FOUR</h5>
+                                        <div id="reminder-nine"><em>Click here to complete</em></div>
+                                    </div>
+    
+                                    <div id="dsm-scd3-4-loan" style="display: none; cursor: pointer;">
+                                        <h5>SCD THREE & FOUR</h5>
+                                        <div id="reminder-ten"><em>Click here to complete</em></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+        
+                        <div id="dsm-part3-return-2scd">
+                            <h4>RETURNING OF SCD(S) FORMS</h4>
+    
+                            <div id="dsm-part3-form-return-2scd">
+                                <h6>TOA PART THREE</h6>
+    
+                                <div id="dsm-part3-form-return-option-2scd" style="display: none;">
+                                    <div id="dsm-scd1-2-return" style="display: none;" data-href="https://forms.office.com/r/bUuS29QQT7">
+                                        <h5>SCD ONE & TWO</h5>
+                                    </div>
+            
+                                    <div id="dsm-scd1-3-return" style="display: none;" data-href="https://forms.office.com/r/V3YhJUFL0U">
+                                        <h5>SCD ONE & THREE</h5>
+                                    </div>
+            
+                                    <div id="dsm-scd1-4-return" style="display: none;" data-href="https://forms.office.com/r/HaAv5CAn80">
+                                        <h5>SCD ONE & FOUR</h5>
+                                    </div>
+            
+                                    <div id="dsm-scd2-3-return" style="display: none;" data-href="https://forms.office.com/r/R3LyXrd8pF">
+                                        <h5>SCD TWO & THREE</h5>
+                                    </div>
+        
+                                    <div id="dsm-scd2-4-return" style="display: none;" data-href="https://forms.office.com/r/7DExNbKwUY">
+                                        <h5>SCD TWO & FOUR</h5>
+                                    </div>
+        
+                                    <div id="dsm-scd3-4-return" style="display: none;" data-href="https://forms.office.com/r/h7juKfbeGv">
+                                        <h5>SCD THREE & FOUR</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        
+    
+                <div id="dsm-bottom-bar-3scd-pm-pic" style="display: none;">
+                    <div id="dsm-bottom-selection-3scd-pm-pic" style="display: none;">
+                        <div id="dsm-part1-loan-3scd">
+                            <h4>LOANING OF SCD(S) FORMS</h4>
+        
+                            <div id="dsm-part1-form-loan-3scd">
+                                <h6>TOA PART ONE</h6>
+        
+                                <div id="dsm-part1-form-loan-option-3scd" style="display: none;">
+                                    <div id="dsm-scd1-2-3-loan" style="display: none; cursor: pointer;">
+                                        <h5>SCD ONE & TWO & THREE</h5>
+                                        <div id="reminder-eleven"><em>Click here to complete</em></div>
+                                    </div>
+            
+                                    <div id="dsm-scd1-2-4-loan" style="display: none; cursor: pointer;">
+                                        <h5>SCD ONE & TWO & FOUR</h5>
+                                        <div id="reminder-twelve"><em>Click here to complete</em></div>
+                                    </div>
+            
+                                    <div id="dsm-scd1-3-4-loan" style="display: none; cursor: pointer;">
+                                        <h5>SCD ONE & THREE & FOUR</h5>
+                                        <div id="reminder-thirteen"><em>Click here to complete</em></div>
+                                    </div>
+            
+                                    <div id="dsm-scd2-3-4-loan" style="display: none; cursor: pointer;">
+                                        <h5>SCD TWO & THREE & FOUR</h5>
+                                        <div id="reminder-forteen"><em>Click here to complete</em></div>
+                                    </div>
+                                </div>
+        
+                            </div>
+                        </div>
+        
+                        <div id="dsm-part3-return-3scd">
+                            <h4>RETURNING OF SCD(S) FORMS</h4>
+    
+                            <div id="dsm-part3-form-return-3scd">
+                                <h6>TOA PART THREE</h6>
+    
+                                <div id="dsm-part3-form-return-option-3scd" style="display: none;">
+                                    <div id="dsm-scd1-2-3-return" style="display: none;" data-href="https://forms.office.com/r/vyk7dvuf79">
+                                        <h5>SCD ONE & TWO & THREE</h5>
+                                    </div>
+            
+                                    <div id="dsm-scd1-2-4-return" style="display: none;" data-href="https://forms.office.com/r/zN8rgSwB4x">
+                                        <h5>SCD ONE & TWO & FOUR</h5>
+                                    </div>
+            
+                                    <div id="dsm-scd1-3-4-return" style="display: none;" data-href="https://forms.office.com/r/bc18xkF6Qh">
+                                        <h5>SCD ONE & THREE & FOUR</h5>
+                                    </div>
+            
+                                    <div id="dsm-scd2-3-4-return" style="display: none;" data-href="https://forms.office.com/r/Sa8XZxLmt6">
+                                        <h5>SCD TWO & THREE & FOUR</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+    
+                <div id="dsm-bottom-bar-4scd-pm-pic" style="display: none;">
+                    <div id="dsm-bottom-selection-4scd-pm-pic" style="display: none;">
+                        <div id="dsm-part1-loan-4scd">
+        
+                            <h4>LOANING OF SCD(S) FORMS</h4>
+        
+                            <div id="dsm-part1-form-loan-4scd">
+                                <h6>TOA PART ONE</h6>
+        
+                                <div id="dsm-part1-form-loan-option-4scd" style="display: none;">
+                                    <div id="dsm-scd1-2-3-4-loan" style="display: none; cursor: pointer;">
+                                        <h5>SCD ONE & TWO & THREE & FOUR</h5>
+                                        <div id="reminder-fifteen"><em>Click here to complete</em></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+        
+                        <div id="dsm-part3-return-4scd">
+                            <h4>RETURNING OF SCD(S) FORMS</h4>
+    
+                            <div id="dsm-part3-form-return-4scd">
+                                <h6>TOA PART THREE</h6>
+    
+                                <div id="dsm-part3-form-return-option-4scd" style="display: none;">
+                                    <div id="dsm-scd1-2-3-4-return" style="display: none;" data-href="https://forms.office.com/r/CB0EMKYmRd">
+                                        <h5>SCD ONE & TWO & THREE & FOUR</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <div id="dsm-bottom-bar-moc" style="display: none;">
+                    <div id="dsm-bottom-selection-moc" style="display: none;">
+                        <div id="dsm-part2-loan">
+                            <h4>LOANING OF SCD(S) FORMS</h4>
+                            <div id="dsm-part2-form-loan">
+                                <h6>TOA PART TWO</h6>
+        
+                                <div id="dsm-part2-form-loan-option" style="display: none;">
+                                    <div id="dsm-scd1-loan-moc" style="display: none; cursor: pointer;">
+                                        <h5>SCD ONE</h5>
+                                        <div id="reminder-one-moc"><em>Click here to complete</em></div>
+                                    </div>
+            
+                                    <div id="dsm-scd2-loan-moc" style="display: none; cursor: pointer;">
+                                        <h5>SCD TWO</h5>
+                                        <div id="reminder-two-moc"><em>Click here to complete</em></div>
+                                    </div>
+            
+                                    <div id="dsm-scd3-loan-moc" style="display: none; cursor: pointer;">
+                                        <h5>SCD THREE</h5>
+                                        <div id="reminder-three-moc"><em>Click here to complete</em></div>
+                                    </div>
+            
+                                    <div id="dsm-scd4-loan-moc" style="display: none; cursor: pointer;">
+                                        <h5>SCD FOUR</h5>
+                                        <div id="reminder-four-moc"><em>Click here to complete</em></div>
+                                    </div>
+                                </div>
+        
+                            </div>
+                        </div>
+        
+                        <div id="dsm-part4-return">
+                            <h4>RETURNING OF SCD(S) FORMS</h4>
+        
+                            <div id="dsm-part4-form-return">
+                                <h6>TOA PART FOUR</h6>
+                                <div id="dsm-part4-form-return-option" style="display: none;">
+                                    <div id="dsm-scd1-return-moc" style="display: none;" data-href="https://forms.office.com/r/G3x98QuBbj">
+                                        <h5>SCD ONE</h5>
+                                    </div>
+            
+                                    <div id="dsm-scd2-return-moc" style="display: none;" data-href="https://forms.office.com/r/SvAwsTjVan">
+                                        <h5>SCD TWO</h5>
+                                    </div>
+            
+                                    <div id="dsm-scd3-return-moc" style="display: none;" data-href="https://forms.office.com/r/gwm9Ax242J">
+                                        <h5>SCD THREE</h5>
+                                    </div>
+            
+                                    <div id="dsm-scd4-return-moc" style="display: none;" data-href="https://forms.office.com/r/aAVHs3smDn">
+                                        <h5>SCD FOUR</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <div id="dsm-bottom-bar-2scd-moc" style="display: none;">
+                    <div id="dsm-bottom-selection-2scd-moc" style="display: none;">
+                        <div id="dsm-part2-loan-2scd">
+                            <h4>LOANING OF SCD(S) FORMS</h4>
+        
+                            <div id="dsm-part2-form-loan-2scd">
+                                <h6>TOA PART TWO</h6>
+        
+                                <div id="dsm-part2-form-loan-option-2scd" style="display: none;">
+                                    <div id="dsm-scd1-2-loan-moc" style="display: none; cursor: pointer;">
+                                        <h5>SCD ONE & TWO</h5>
+                                        <div id="reminder-five-moc"><em>Click here to complete</em></div>
+                                    </div>
+            
+                                    <div id="dsm-scd1-3-loan-moc" style="display: none; cursor: pointer;">
+                                        <h5>SCD ONE & THREE</h5>
+                                        <div id="reminder-six-moc"><em>Click here to complete</em></div>
+                                    </div>
+            
+                                    <div id="dsm-scd1-4-loan-moc" style="display: none; cursor: pointer;">
+                                        <h5>SCD ONE & FOUR</h5>
+                                        <div id="reminder-seven-moc"><em>Click here to complete</em></div>
+                                    </div>
+            
+                                    <div id="dsm-scd2-3-loan-moc" style="display: none; cursor: pointer;">
+                                        <h5>SCD TWO & THREE</h5>
+                                        <div id="reminder-eight-moc"><em>Click here to complete</em></div>
+                                    </div>
+    
+                                    <div id="dsm-scd2-4-loan-moc" style="display: none; cursor: pointer;">
+                                        <h5>SCD TWO & FOUR</h5>
+                                        <div id="reminder-nine-moc"><em>Click here to complete</em></div>
+                                    </div>
+    
+                                    <div id="dsm-scd3-4-loan-moc" style="display: none; cursor: pointer;">
+                                        <h5>SCD THREE & FOUR</h5>
+                                        <div id="reminder-ten-moc"><em>Click here to complete</em></div>
+                                    </div>
+                                </div>
+        
+                            </div>
+                        </div>
+        
+                        <div id="dsm-part4-return-2scd">
+                            <h4>RETURNING OF SCD(S) FORMS</h4>
+    
+                            <div id="dsm-part4-form-return-2scd">
+                                <h6>TOA PART FOUR</h6>
+    
+                                <div id="dsm-part4-form-return-option-2scd" style="display: none;">
+                                    <div id="dsm-scd1-2-return-moc" style="display: none;" data-href="https://forms.office.com/r/FDS53HJef7">
+                                        <h5>SCD ONE & TWO</h5>
+                                    </div>
+            
+                                    <div id="dsm-scd1-3-return-moc" style="display: none;" data-href="https://forms.office.com/r/fPQLnSvvNB">
+                                        <h5>SCD ONE & THREE</h5>
+                                    </div>
+            
+                                    <div id="dsm-scd1-4-return-moc" style="display: none;" data-href="https://forms.office.com/r/pcuPXYmmsi">
+                                        <h5>SCD ONE & FOUR</h5>
+                                    </div>
+            
+                                    <div id="dsm-scd2-3-return-moc" style="display: none;" data-href="https://forms.office.com/r/CEfkQ3ajLx">
+                                        <h5>SCD TWO & THREE</h5>
+                                    </div>
+        
+                                    <div id="dsm-scd2-4-return-moc" style="display: none;" data-href="https://forms.office.com/r/VaGTF9btmJ">
+                                        <h5>SCD TWO & FOUR</h5>
+                                    </div>
+        
+                                    <div id="dsm-scd3-4-return-moc" style="display: none;" data-href="https://forms.office.com/r/KvyH6wRYnY">
+                                        <h5>SCD THREE & FOUR</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        
+    
+                <div id="dsm-bottom-bar-3scd-moc" style="display: none;">
+                    <div id="dsm-bottom-selection-3scd-moc" style="display: none;">
+                        <div id="dsm-part2-loan-3scd">
+                            <h4>LOANING OF SCD(S) FORMS</h4>
+        
+                            <div id="dsm-part2-form-loan-3scd">
+                                <h6>TOA PART TWO</h6>
+        
+                                <div id="dsm-part2-form-loan-option-3scd" style="display: none;">
+                                    <div id="dsm-scd1-2-3-loan-moc" style="display: none; cursor: pointer;">
+                                        <h5>SCD ONE & TWO & THREE</h5>
+                                        <div id="reminder-eleven-moc"><em>Click here to complete</em></div>
+                                    </div>
+            
+                                    <div id="dsm-scd1-2-4-loan-moc" style="display: none; cursor: pointer;">
+                                        <h5>SCD ONE & TWO & FOUR</h5>
+                                        <div id="reminder-twelve-moc"><em>Click here to complete</em></div>
+                                    </div>
+            
+                                    <div id="dsm-scd1-3-4-loan-moc" style="display: none; cursor: pointer;">
+                                        <h5>SCD ONE & THREE & FOUR</h5>
+                                        <div id="reminder-thirteen-moc"><em>Click here to complete</em></div>
+                                    </div>
+            
+                                    <div id="dsm-scd2-3-4-loan-moc" style="display: none; cursor: pointer;">
+                                        <h5>SCD TWO & THREE & FOUR</h5>
+                                        <div id="reminder-forteen-moc"><em>Click here to complete</em></div>
+                                    </div>
+                                </div>
+        
+                            </div>
+                        </div>
+        
+                        <div id="dsm-part4-return-3scd">
+                            <h4>RETURNING OF SCD(S) FORMS</h4>
+    
+                            <div id="dsm-part4-form-return-3scd">
+                                <h6>TOA PART FOUR</h6>
+    
+                                <div id="dsm-part4-form-return-option-3scd" style="display: none;">
+                                    <div id="dsm-scd1-2-3-return-moc" style="display: none;" data-href="https://forms.office.com/r/PNXkj95hZ9">
+                                        <h5>SCD ONE & TWO & THREE</h5>
+                                    </div>
+            
+                                    <div id="dsm-scd1-2-4-return-moc" style="display: none;" data-href="https://forms.office.com/r/9yG9Rf8qC8">
+                                        <h5>SCD ONE & TWO & FOUR</h5>
+                                    </div>
+            
+                                    <div id="dsm-scd1-3-4-return-moc" style="display: none;" data-href="https://forms.office.com/r/u1mCFHQDEC">
+                                        <h5>SCD ONE & THREE & FOUR</h5>
+                                    </div>
+            
+                                    <div id="dsm-scd2-3-4-return-moc" style="display: none;" data-href="https://forms.office.com/r/4nE6U4HCYt">
+                                        <h5>SCD TWO & THREE & FOUR</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+    
+                <div id="dsm-bottom-bar-4scd-moc" style="display: none;">
+                    <div id="dsm-bottom-selection-4scd-moc" style="display: none;">
+                        <div id="dsm-part2-loan-4scd">
+        
+                            <h4>LOANING OF SCD(S) FORMS</h4>
+        
+                            <div id="dsm-part2-form-loan-4scd">
+                                <h6>TOA PART TWO</h6>
+        
+                                <div id="dsm-part2-form-loan-option-4scd" style="display: none;">
+                                    <div id="dsm-scd1-2-3-4-loan-moc" style="display: none; cursor: pointer;">
+                                        <h5>SCD ONE & TWO & THREE & FOUR</h5>
+                                        <div id="reminder-fifteen-moc"><em>Click here to complete</em></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+        
+                        <div id="dsm-part4-return-4scd">
+                            <h4>RETURNING OF SCD(S) FORMS</h4>
+    
+                            <div id="dsm-part4-form-return-4scd">
+                                <h6>TOA PART FOUR</h6>
+    
+                                <div id="dsm-part4-form-return-option-4scd" style="display: none;">
+                                    <div id="dsm-scd1-2-3-4-return-moc" style="display: none;" data-href="https://forms.office.com/r/TV5yRkRjKP">
+                                        <h5>SCD ONE & TWO & THREE & FOUR</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+   
+    <div id="login-form" style="display: none;">
+        <form action="/submit" method="post" id="form">
+
+            <button id="close-button" type="button">&times;</button>
+
+            <div id="form-body">
+                <div id="text-lines">
+                    <div id="title-line"><em>ARE YOU A MOC (DO)?</em></div>
+                    <br>
+                    <div id="subtitle-line"><em>If you are a <strong>MOC (DO)</strong>, please key in the password below</em></div>
+                </div>
+
+                <div id="password-area">
+                    <div class="password-input">
+                        <input placeholder="Password" type="password">
+                    </div>
+                </div>
+                
+                <div id="submit-button-cvr">
+                    <button id="submit-button" type="submit">Submit</button>
+                </div>
+
+            </div>
+        </form>
+    </div>
+
+    
+    <div class="footer">
+        <div id="main-footer"></div>
+    </div>
+
+    <footer>
+        <p>2024 Circle Line @ SMRT Trains Corporation Ltd</p>   
+    </footer> 
+
+    <script src="app.js"></script>
+
+</body>
+</html>
+
+
