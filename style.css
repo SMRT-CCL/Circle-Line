@@ -935,7 +935,7 @@ h5{
 }
       
 /* Mobile Phone Layout: */
-@media only screen and (max-width: 600px){
+@media only screen and (max-width: 1440px){
     header{
         font-size: 10px;
     }
