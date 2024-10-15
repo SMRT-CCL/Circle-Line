@@ -2852,6 +2852,23 @@ document.addEventListener('DOMContentLoaded', (event) => {
     document.getElementById(elementId).style.display = displayValue;
   }
 
+  const dsm_username = document.getElementById('dsm-username');
+
+  const dsm_scd_number = document.getElementById('dsm-scd-number');
+  const dsm_1scd_name = document.getElementById('dsm-1scd-pm-pic');
+  const dsm_2scd_name = document.getElementById('dsm-2scd-pm-pic');
+  const dsm_3scd_name = document.getElementById('dsm-3scd-pm-pic');
+  const dsm_4scd_name = document.getElementById('dsm-4scd-pm-pic');
+
+  const dsm_scd_number_moc = document.getElementById('dsm-scd-number-moc');
+  const dsm_1scd_name_moc = document.getElementById('dsm-1scd-moc');
+  const dsm_2scd_name_moc = document.getElementById('dsm-2scd-moc');
+  const dsm_3scd_name_moc = document.getElementById('dsm-3scd-moc');
+  const dsm_4scd_name_moc = document.getElementById('dsm-4scd-moc');
+
+  let dsm_part1_form_successful = 'false';
+  let dsm_part2_form_successful = 'false';
+
   /* DSM Part 1 & 3 (SCD 1) */
   const dsm_part1_form1 = document.getElementById('dsm-scd1-loan');
   const dsm_part3_form1 = document.getElementById('dsm-scd1-return');
@@ -2867,8 +2884,39 @@ document.addEventListener('DOMContentLoaded', (event) => {
   dsm_part1_form1.onclick = function() {
     window.open("https://forms.office.com/r/5ywqqfF3MV", '_blank');
     toggleDisplay('reminder-one', 'none');
-    dsm_part3_form1.classList.remove('overlay');
-    dsm_part1_form1.classList.remove('unlocked');
+    dsm_part1_form_successful = 'true';
+    if (dsm_part1_form_successful === 'true'){
+      dsm_part3_form1.classList.remove('overlay');
+      dsm_part1_form1.classList.remove('unlocked');
+
+      for (let i = 0; i < dsm_username.options.length; i++) {
+        if (dsm_username.options[i].value !== 'dsm-pm-pic') {
+            dsm_username.options[i].style.display = 'none';
+        } else {
+          dsm_username.options[i].style.display = 'block';
+        }
+      }
+
+      for (let i = 0; i < dsm_scd_number.options.length; i++) {
+        if (dsm_scd_number.options[i].value !== 'dsm-1scd') {
+          dsm_scd_number.options[i].style.display = 'none';
+        } else {
+          dsm_scd_number.options[i].style.display = 'block';
+        }
+      }
+      
+      for (let i = 0; i < dsm_1scd_name.options.length; i++) {
+        if (dsm_1scd_name.options[i].value !== 'dsm-scd1') {
+          dsm_1scd_name.options[i].style.display = 'none';
+        } else {
+          dsm_1scd_name.options[i].style.display = 'block';
+        }
+      }
+    } else if (dsm_part1_form_successful === 'false') {
+      setTimeout(() => {
+        alert('Your TOA Part 1 is rejected. Please submit again.');
+    }, 1000);
+    }
   };
 
   function lockP3form1() {
@@ -2884,6 +2932,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
   function unlockPart3form1status() {
     dsm_part3_form1.classList.add('unlocked');
     dsm_part3_form1.classList.remove('locked');
+    localStorage.setItem('part3FormLocked', 'false');
   }
   
   function unlockP3form1() {
@@ -2918,9 +2967,39 @@ document.addEventListener('DOMContentLoaded', (event) => {
   dsm_part1_form2.onclick = function() {
     window.open("https://forms.office.com/r/5ywqqfF3MV", '_blank');
     toggleDisplay('reminder-two', 'none');
-    dsm_part3_form2.classList.remove('overlay');
-    dsm_part1_form2.classList.remove('unlocked');
+    dsm_part1_form_successful = 'true';
+    if (dsm_part1_form_successful === 'true'){
+      dsm_part3_form2.classList.remove('overlay');
+      dsm_part1_form2.classList.remove('unlocked');
 
+      for (let i = 0; i < dsm_username.options.length; i++) {
+        if (dsm_username.options[i].value !== 'dsm-pm-pic') {
+          dsm_username.options[i].style.display = 'none';
+        } else {
+          dsm_username.options[i].style.display = 'block';
+        }
+      }
+
+      for (let i = 0; i < dsm_scd_number.options.length; i++) {
+        if (dsm_scd_number.options[i].value !== 'dsm-1scd') {
+          dsm_scd_number.options[i].style.display = 'none';
+        } else {
+          dsm_scd_number.options[i].style.display = 'block';
+        }
+      }
+      
+      for (let i = 0; i < dsm_1scd_name.options.length; i++) {
+        if (dsm_1scd_name.options[i].value !== 'dsm-scd2') {
+          dsm_1scd_name.options[i].style.display = 'none';
+        } else {
+          dsm_1scd_name.options[i].style.display = 'block';
+        }
+      }
+    } else if (dsm_part1_form_successful === 'false') {
+        setTimeout(() => {
+          alert('Your TOA Part 1 is rejected. Please submit again.');
+      }, 1000);
+    }
   };
 
   function lockPart3form2status() {
@@ -2975,8 +3054,39 @@ document.addEventListener('DOMContentLoaded', (event) => {
   dsm_part1_form3.onclick = function() {
     window.open("https://forms.office.com/r/5ywqqfF3MV", '_blank');
     toggleDisplay('reminder-three', 'none')
-    dsm_part3_form3.classList.remove('overlay');
-    dsm_part1_form3.classList.remove('unlocked');
+    dsm_part1_form_successful = 'true';
+    if (dsm_part1_form_successful === 'true'){
+      dsm_part3_form3.classList.remove('overlay');
+      dsm_part1_form3.classList.remove('unlocked');
+
+      for (let i = 0; i < dsm_username.options.length; i++) {
+        if (dsm_username.options[i].value !== 'dsm-pm-pic') {
+          dsm_username.options[i].style.display = 'none';
+        } else {
+          dsm_username.options[i].style.display = 'block';
+        }
+      }
+
+      for (let i = 0; i < dsm_scd_number.options.length; i++) {
+        if (dsm_scd_number.options[i].value !== 'dsm-1scd') {
+          dsm_scd_number.options[i].style.display = 'none';
+        } else {
+          dsm_scd_number.options[i].style.display = 'block';
+        }
+      }
+      
+      for (let i = 0; i < dsm_1scd_name.options.length; i++) {
+        if (dsm_1scd_name.options[i].value !== 'dsm-scd3') {
+          dsm_1scd_name.options[i].style.display = 'none';
+        } else {
+          dsm_1scd_name.options[i].style.display = 'block';
+        }
+      }
+    } else if (dsm_part1_form_successful === 'false') {
+        setTimeout(() => {
+          alert('Your TOA Part 1 is rejected. Please submit again.');
+      }, 1000);
+    }
   };
 
   function lockPart3form3status() {
@@ -3031,8 +3141,39 @@ document.addEventListener('DOMContentLoaded', (event) => {
   dsm_part1_form4.onclick = function() {
     window.open("https://forms.office.com/r/5ywqqfF3MV", '_blank');
     toggleDisplay('reminder-four', 'none');
-    dsm_part3_form4.classList.remove('overlay');
-    dsm_part1_form4.classList.remove('unlocked');
+    dsm_part1_form_successful = 'true';
+    if (dsm_part1_form_successful === 'true'){
+      dsm_part3_form4.classList.remove('overlay');
+      dsm_part1_form4.classList.remove('unlocked');
+
+      for (let i = 0; i < dsm_username.options.length; i++) {
+        if (dsm_username.options[i].value !== 'dsm-pm-pic') {
+          dsm_username.options[i].style.display = 'none';
+        } else {
+          dsm_username.options[i].style.display = 'block';
+        }
+      }
+
+      for (let i = 0; i < dsm_scd_number.options.length; i++) {
+        if (dsm_scd_number.options[i].value !== 'dsm-1scd') {
+          dsm_scd_number.options[i].style.display = 'none';
+        } else {
+          dsm_scd_number.options[i].style.display = 'block';
+        }
+      }
+      
+      for (let i = 0; i < dsm_1scd_name.options.length; i++) {
+        if (dsm_1scd_name.options[i].value !== 'dsm-scd4') {
+          dsm_1scd_name.options[i].style.display = 'none';
+        } else {
+          dsm_1scd_name.options[i].style.display = 'block';
+        }
+      }
+    } else if (dsm_part1_form_successful === 'false') {
+        setTimeout(() => {
+          alert('Your TOA Part 1 is rejected. Please submit again.');
+      }, 1000);
+    }
   };
 
   function lockPart3form4status() {
@@ -3087,8 +3228,39 @@ document.addEventListener('DOMContentLoaded', (event) => {
   dsm_part1_form5.onclick = function() {
     window.open("https://forms.office.com/r/5ywqqfF3MV", '_blank');
     toggleDisplay('reminder-five','none');
-    dsm_part3_form5.classList.remove('overlay');
-    dsm_part1_form5.classList.remove('unlocked');
+    dsm_part1_form_successful = 'true';
+    if (dsm_part1_form_successful === 'true'){
+      dsm_part3_form5.classList.remove('overlay');
+      dsm_part1_form5.classList.remove('unlocked');
+
+      for (let i = 0; i < dsm_username.options.length; i++) {
+        if (dsm_username.options[i].value !== 'dsm-pm-pic') {
+          dsm_username.options[i].style.display = 'none';
+        } else {
+          dsm_username.options[i].style.display = 'block';
+        }
+      }
+
+      for (let i = 0; i < dsm_scd_number.options.length; i++) {
+        if (dsm_scd_number.options[i].value !== 'dsm-2scd') {
+          dsm_scd_number.options[i].style.display = 'none';
+        } else {
+          dsm_scd_number.options[i].style.display = 'block';
+        }
+      }
+      
+      for (let i = 0; i < dsm_2scd_name.options.length; i++) {
+        if (dsm_2scd_name.options[i].value !== 'dsm-scd1-2') {
+          dsm_2scd_name.options[i].style.display = 'none';
+        } else {
+          dsm_2scd_name.options[i].style.display = 'block';
+        }
+      }
+    } else if (dsm_part1_form_successful === 'false') {
+        setTimeout(() => {
+          alert('Your TOA Part 1 is rejected. Please submit again.');
+      }, 1000);
+    }
   };
 
   function lockPart3form5status() {
@@ -3143,8 +3315,39 @@ document.addEventListener('DOMContentLoaded', (event) => {
   dsm_part1_form6.onclick = function() {
       window.open("https://forms.office.com/r/5ywqqfF3MV", '_blank');
       toggleDisplay('reminder-six', 'none');
+      dsm_part1_form_successful = 'true';
+    if (dsm_part1_form_successful === 'true'){
       dsm_part3_form6.classList.remove('overlay');
       dsm_part1_form6.classList.remove('unlocked');
+
+      for (let i = 0; i < dsm_username.options.length; i++) {
+        if (dsm_username.options[i].value !== 'dsm-pm-pic') {
+          dsm_username.options[i].style.display = 'none';
+        } else {
+          dsm_username.options[i].style.display = 'block';
+        }
+      }
+
+      for (let i = 0; i < dsm_scd_number.options.length; i++) {
+        if (dsm_scd_number.options[i].value !== 'dsm-2scd') {
+          dsm_scd_number.options[i].style.display = 'none';
+        } else {
+          dsm_scd_number.options[i].style.display = 'block';
+        }
+      }
+      
+      for (let i = 0; i < dsm_2scd_name.options.length; i++) {
+        if (dsm_2scd_name.options[i].value !== 'dsm-scd1-3') {
+          dsm_2scd_name.options[i].style.display = 'none';
+        } else {
+          dsm_2scd_name.options[i].style.display = 'block';
+        }
+      }
+    } else if (dsm_part1_form_successful === 'false') {
+        setTimeout(() => {
+          alert('Your TOA Part 1 is rejected. Please submit again.');
+      }, 1000);
+    }
 
     };
 
@@ -3200,8 +3403,39 @@ document.addEventListener('DOMContentLoaded', (event) => {
   dsm_part1_form7.onclick = function() {
     window.open("https://forms.office.com/r/5ywqqfF3MV", '_blank');
     toggleDisplay('reminder-seven', 'none');
-    dsm_part3_form7.classList.remove('overlay');
-    dsm_part1_form7.classList.remove('unlocked');
+    dsm_part1_form_successful = 'true';
+    if (dsm_part1_form_successful === 'true'){
+      dsm_part3_form7.classList.remove('overlay');
+      dsm_part1_form7.classList.remove('unlocked');
+
+      for (let i = 0; i < dsm_username.options.length; i++) {
+        if (dsm_username.options[i].value !== 'dsm-pm-pic') {
+          dsm_username.options[i].style.display = 'none';
+        } else {
+          dsm_username.options[i].style.display = 'block';
+        }
+      }
+
+      for (let i = 0; i < dsm_scd_number.options.length; i++) {
+        if (dsm_scd_number.options[i].value !== 'dsm-2scd') {
+          dsm_scd_number.options[i].style.display = 'none';
+        } else {
+          dsm_scd_number.options[i].style.display = 'block';
+        }
+      }
+      
+      for (let i = 0; i < dsm_2scd_name.options.length; i++) {
+        if (dsm_2scd_name.options[i].value !== 'dsm-scd1-4') {
+          dsm_2scd_name.options[i].style.display = 'none';
+        } else {
+          dsm_2scd_name.options[i].style.display = 'block';
+        }
+      }
+    } else if (dsm_part1_form_successful === 'false') {
+        setTimeout(() => {
+          alert('Your TOA Part 1 is rejected. Please submit again.');
+      }, 1000);
+    }
   }
 
   function lockPart3form7status() {
@@ -3256,8 +3490,39 @@ document.addEventListener('DOMContentLoaded', (event) => {
   dsm_part1_form8.onclick = function() {
     window.open("https://forms.office.com/r/5ywqqfF3MV", '_blank');
     toggleDisplay('reminder-eight', 'none');
-    dsm_part3_form8.classList.remove('overlay');
-    dsm_part1_form8.classList.remove('unlocked');
+    dsm_part1_form_successful = 'true';
+    if (dsm_part1_form_successful === 'true'){
+      dsm_part3_form8.classList.remove('overlay');
+      dsm_part1_form8.classList.remove('unlocked');
+
+      for (let i = 0; i < dsm_username.options.length; i++) {
+        if (dsm_username.options[i].value !== 'dsm-pm-pic') {
+          dsm_username.options[i].style.display = 'none';
+        } else {
+          dsm_username.options[i].style.display = 'block';
+        }
+      }
+
+      for (let i = 0; i < dsm_scd_number.options.length; i++) {
+        if (dsm_scd_number.options[i].value !== 'dsm-2scd') {
+          dsm_scd_number.options[i].style.display = 'none';
+        } else {
+          dsm_scd_number.options[i].style.display = 'block';
+        }
+      }
+      
+      for (let i = 0; i < dsm_2scd_name.options.length; i++) {
+        if (dsm_2scd_name.options[i].value !== 'dsm-scd2-3') {
+          dsm_2scd_name.options[i].style.display = 'none';
+        } else {
+          dsm_2scd_name.options[i].style.display = 'block';
+        }
+      }
+    } else if (dsm_part1_form_successful === 'false') {
+        setTimeout(() => {
+          alert('Your TOA Part 1 is rejected. Please submit again.');
+      }, 1000);
+    }
   }
 
   function lockPart3form8status() {
@@ -3312,8 +3577,39 @@ document.addEventListener('DOMContentLoaded', (event) => {
   dsm_part1_form9.onclick = function() {
     window.open("https://forms.office.com/r/5ywqqfF3MV", '_blank');
     toggleDisplay('reminder-nine', 'none');
-    dsm_part3_form9.classList.remove('overlay');
-    dsm_part1_form9.classList.remove('unlocked');
+    dsm_part1_form_successful = 'true';
+    if (dsm_part1_form_successful === 'true'){
+      dsm_part3_form9.classList.remove('overlay');
+      dsm_part1_form9.classList.remove('unlocked');
+
+      for (let i = 0; i < dsm_username.options.length; i++) {
+        if (dsm_username.options[i].value !== 'dsm-pm-pic') {
+          dsm_username.options[i].style.display = 'none';
+        } else {
+          dsm_username.options[i].style.display = 'block';
+        }
+      }
+
+      for (let i = 0; i < dsm_scd_number.options.length; i++) {
+        if (dsm_scd_number.options[i].value !== 'dsm-2scd') {
+          dsm_scd_number.options[i].style.display = 'none';
+        } else {
+          dsm_scd_number.options[i].style.display = 'block';
+        }
+      }
+      
+      for (let i = 0; i < dsm_2scd_name.options.length; i++) {
+        if (dsm_2scd_name.options[i].value !== 'dsm-scd2-4') {
+          dsm_2scd_name.options[i].style.display = 'none';
+        } else {
+          dsm_2scd_name.options[i].style.display = 'block';
+        }
+      }
+    } else if (dsm_part1_form_successful === 'false') {
+        setTimeout(() => {
+          alert('Your TOA Part 1 is rejected. Please submit again.');
+      }, 1000);
+    }
   }
 
   function lockPart3form9status() {
@@ -3368,8 +3664,39 @@ document.addEventListener('DOMContentLoaded', (event) => {
   dsm_part1_form10.onclick = function() {
     window.open("https://forms.office.com/r/5ywqqfF3MV", '_blank');
     toggleDisplay('reminder-ten', 'none');
-    dsm_part3_form10.classList.remove('overlay');
-    dsm_part1_form10.classList.remove('unlocked');
+    dsm_part1_form_successful = 'true';
+    if (dsm_part1_form_successful === 'true'){
+      dsm_part3_form10.classList.remove('overlay');
+      dsm_part1_form10.classList.remove('unlocked');
+
+      for (let i = 0; i < dsm_username.options.length; i++) {
+        if (dsm_username.options[i].value !== 'dsm-pm-pic') {
+          dsm_username.options[i].style.display = 'none';
+        } else {
+          dsm_username.options[i].style.display = 'block';
+        }
+      }
+
+      for (let i = 0; i < dsm_scd_number.options.length; i++) {
+        if (dsm_scd_number.options[i].value !== 'dsm-2scd') {
+          dsm_scd_number.options[i].style.display = 'none';
+        } else {
+          dsm_scd_number.options[i].style.display = 'block';
+        }
+      }
+      
+      for (let i = 0; i < dsm_2scd_name.options.length; i++) {
+        if (dsm_2scd_name.options[i].value !== 'dsm-scd3-4') {
+          dsm_2scd_name.options[i].style.display = 'none';
+        } else {
+          dsm_2scd_name.options[i].style.display = 'block';
+        }
+      }
+    } else if (dsm_part1_form_successful === 'false') {
+        setTimeout(() => {
+          alert('Your TOA Part 1 is rejected. Please submit again.');
+      }, 1000);
+    }
   }
 
   function lockPart3form10status() {
@@ -3424,8 +3751,39 @@ document.addEventListener('DOMContentLoaded', (event) => {
   dsm_part1_form11.onclick = function() {
     window.open("https://forms.office.com/r/5ywqqfF3MV", '_blank');
     toggleDisplay('reminder-eleven', 'none');
-    dsm_part3_form11.classList.remove('overlay');
-    dsm_part1_form11.classList.remove('unlocked');
+    dsm_part1_form_successful = 'true';
+    if (dsm_part1_form_successful === 'true'){
+      dsm_part3_form11.classList.remove('overlay');
+      dsm_part1_form11.classList.remove('unlocked');
+
+      for (let i = 0; i < dsm_username.options.length; i++) {
+        if (dsm_username.options[i].value !== 'dsm-pm-pic') {
+          dsm_username.options[i].style.display = 'none';
+        } else {
+          dsm_username.options[i].style.display = 'block';
+        }
+      }
+
+      for (let i = 0; i < dsm_scd_number.options.length; i++) {
+        if (dsm_scd_number.options[i].value !== 'dsm-3scd') {
+          dsm_scd_number.options[i].style.display = 'none';
+        } else {
+          dsm_scd_number.options[i].style.display = 'block';
+        }
+      }
+      
+      for (let i = 0; i < dsm_3scd_name.options.length; i++) {
+        if (dsm_3scd_name.options[i].value !== 'dsm-scd1-2-3') {
+          dsm_3scd_name.options[i].style.display = 'none';
+        } else {
+          dsm_3scd_name.options[i].style.display = 'block';
+        }
+      }
+    } else if (dsm_part1_form_successful === 'false') {
+        setTimeout(() => {
+          alert('Your TOA Part 1 is rejected. Please submit again.');
+      }, 1000);
+    }
   }
 
   function lockPart3form11status() {
@@ -3480,8 +3838,39 @@ document.addEventListener('DOMContentLoaded', (event) => {
   dsm_part1_form12.onclick = function() {
     window.open("https://forms.office.com/r/5ywqqfF3MV", '_blank');
     toggleDisplay('reminder-twelve', 'none');
-    dsm_part3_form12.classList.remove('overlay');
-    dsm_part1_form12.classList.remove('unlocked');
+    dsm_part1_form_successful = 'true';
+    if (dsm_part1_form_successful === 'true'){
+      dsm_part3_form12.classList.remove('overlay');
+      dsm_part1_form12.classList.remove('unlocked');
+
+      for (let i = 0; i < dsm_username.options.length; i++) {
+        if (dsm_username.options[i].value !== 'dsm-pm-pic') {
+          dsm_username.options[i].style.display = 'none';
+        } else {
+          dsm_username.options[i].style.display = 'block';
+        }
+      }
+
+      for (let i = 0; i < dsm_scd_number.options.length; i++) {
+        if (dsm_scd_number.options[i].value !== 'dsm-3scd') {
+          dsm_scd_number.options[i].style.display = 'none';
+        } else {
+          dsm_scd_number.options[i].style.display = 'block';
+        }
+      }
+      
+      for (let i = 0; i < dsm_3scd_name.options.length; i++) {
+        if (dsm_3scd_name.options[i].value !== 'dsm-scd1-2-4') {
+          dsm_3scd_name.options[i].style.display = 'none';
+        } else {
+          dsm_3scd_name.options[i].style.display = 'block';
+        }
+      }
+    } else if (dsm_part1_form_successful === 'false') {
+        setTimeout(() => {
+          alert('Your TOA Part 1 is rejected. Please submit again.');
+      }, 1000);
+    }
   }
 
   function lockPart3form12status() {
@@ -3536,8 +3925,39 @@ document.addEventListener('DOMContentLoaded', (event) => {
   dsm_part1_form13.onclick = function() {
     window.open("https://forms.office.com/r/5ywqqfF3MV", '_blank');
     toggleDisplay('reminder-thirteen', 'none');
-    dsm_part3_form13.classList.remove('overlay');
-    dsm_part1_form13.classList.remove('unlocked');
+    dsm_part1_form_successful = 'true';
+    if (dsm_part1_form_successful === 'true'){
+      dsm_part3_form13.classList.remove('overlay');
+      dsm_part1_form13.classList.remove('unlocked');
+
+      for (let i = 0; i < dsm_username.options.length; i++) {
+        if (dsm_username.options[i].value !== 'dsm-pm-pic') {
+          dsm_username.options[i].style.display = 'none';
+        } else {
+          dsm_username.options[i].style.display = 'block';
+        }
+      }
+
+      for (let i = 0; i < dsm_scd_number.options.length; i++) {
+        if (dsm_scd_number.options[i].value !== 'dsm-3scd') {
+          dsm_scd_number.options[i].style.display = 'none';
+        } else {
+          dsm_scd_number.options[i].style.display = 'block';
+        }
+      }
+      
+      for (let i = 0; i < dsm_3scd_name.options.length; i++) {
+        if (dsm_3scd_name.options[i].value !== 'dsm-scd1-3-4') {
+          dsm_3scd_name.options[i].style.display = 'none';
+        } else {
+          dsm_3scd_name.options[i].style.display = 'block';
+        }
+      }
+    } else if (dsm_part1_form_successful === 'false') {
+        setTimeout(() => {
+          alert('Your TOA Part 1 is rejected. Please submit again.');
+      }, 1000);
+    }
   }
 
   function lockPart3form13status() {
@@ -3592,8 +4012,39 @@ document.addEventListener('DOMContentLoaded', (event) => {
   dsm_part1_form14.onclick = function() {
     window.open("https://forms.office.com/r/5ywqqfF3MV", '_blank');
     toggleDisplay('reminder-forteen', 'none');
-    dsm_part3_form14.classList.remove('overlay');
-    dsm_part1_form14.classList.remove('unlocked');
+    dsm_part1_form_successful = 'true';
+    if (dsm_part1_form_successful === 'true'){
+      dsm_part3_form14.classList.remove('overlay');
+      dsm_part1_form14.classList.remove('unlocked');
+
+      for (let i = 0; i < dsm_username.options.length; i++) {
+        if (dsm_username.options[i].value !== 'dsm-pm-pic') {
+          dsm_username.options[i].style.display = 'none';
+        } else {
+          dsm_username.options[i].style.display = 'block';
+        }
+      }
+
+      for (let i = 0; i < dsm_scd_number.options.length; i++) {
+        if (dsm_scd_number.options[i].value !== 'dsm-3scd') {
+          dsm_scd_number.options[i].style.display = 'none';
+        } else {
+          dsm_scd_number.options[i].style.display = 'block';
+        }
+      }
+      
+      for (let i = 0; i < dsm_3scd_name.options.length; i++) {
+        if (dsm_3scd_name.options[i].value !== 'dsm-scd2-3-4') {
+          dsm_3scd_name.options[i].style.display = 'none';
+        } else {
+          dsm_3scd_name.options[i].style.display = 'block';
+        }
+      }
+    } else if (dsm_part1_form_successful === 'false') {
+        setTimeout(() => {
+          alert('Your TOA Part 1 is rejected. Please submit again.');
+      }, 1000);
+    }
   }
 
   function lockPart3form14status() {
@@ -3648,8 +4099,39 @@ document.addEventListener('DOMContentLoaded', (event) => {
   dsm_part1_form15.onclick = function() {
     window.open("https://forms.office.com/r/5ywqqfF3MV", '_blank');
     toggleDisplay('reminder-fifteen', 'none');
-    dsm_part3_form15.classList.remove('overlay');
-    dsm_part1_form15.classList.remove('unlocked');
+    dsm_part1_form_successful = 'true';
+    if (dsm_part1_form_successful === 'true'){
+      dsm_part3_form15.classList.remove('overlay');
+      dsm_part1_form15.classList.remove('unlocked');
+
+      for (let i = 0; i < dsm_username.options.length; i++) {
+        if (dsm_username.options[i].value !== 'dsm-pm-pic') {
+          dsm_username.options[i].style.display = 'none';
+        } else {
+          dsm_username.options[i].style.display = 'block';
+        }
+      }
+
+      for (let i = 0; i < dsm_scd_number.options.length; i++) {
+        if (dsm_scd_number.options[i].value !== 'dsm-4scd') {
+          dsm_scd_number.options[i].style.display = 'none';
+        } else {
+          dsm_scd_number.options[i].style.display = 'block';
+        }
+      }
+      
+      for (let i = 0; i < dsm_4scd_name.options.length; i++) {
+        if (dsm_4scd_name.options[i].value !== 'dsm-scd1-2-3-4') {
+          dsm_4scd_name.options[i].style.display = 'none';
+        } else {
+          dsm_4scd_name.options[i].style.display = 'block';
+        }
+      }
+    } else if (dsm_part1_form_successful === 'false') {
+        setTimeout(() => {
+          alert('Your TOA Part 1 is rejected. Please submit again.');
+      }, 1000);
+    }
   }
 
   function lockPart3form15status() {
@@ -3675,8 +4157,39 @@ document.addEventListener('DOMContentLoaded', (event) => {
   function unlockP3form15() {
     window.open(dsm_part3_form15.dataset.href, '_blank');
     dsm_part3_form15.disabled = false;
-    dsm_part3_form15.classList.add('unlocked');
-    dsm_part3_form15.classList.remove('locked');
+    dsm_part1_form_successful = 'true';
+    if (dsm_part1_form_successful === 'true'){
+      dsm_part3_form15.classList.remove('overlay');
+      dsm_part1_form15.classList.remove('unlocked');
+
+      for (let i = 0; i < dsm_username.options.length; i++) {
+        if (dsm_username.options[i].value !== 'dsm-pm-pic') {
+          dsm_username.options[i].style.display = 'none';
+        } else {
+          dsm_username.options[i].style.display = 'block';
+        }
+      }
+
+      for (let i = 0; i < dsm_scd_number.options.length; i++) {
+        if (dsm_scd_number.options[i].value !== 'dsm-4scd') {
+          dsm_scd_number.options[i].style.display = 'none';
+        } else {
+          dsm_scd_number.options[i].style.display = 'block';
+        }
+      }
+      
+      for (let i = 0; i < dsm_4scd_name.options.length; i++) {
+        if (dsm_4scd_name.options[i].value !== 'dsm-scd1-2-3-4') {
+          dsm_4scd_name.options[i].style.display = 'none';
+        } else {
+          dsm_4scd_name.options[i].style.display = 'block';
+        }
+      }
+    } else if (dsm_part1_form_successful === 'false') {
+        setTimeout(() => {
+          alert('Your TOA Part 1 is rejected. Please submit again.');
+      }, 1000);
+    }
   }
 
   if ((distance1 <= 14) && (distance2 <= 14) && (distance3 <= 14) && (distance4 <= 14))  {
@@ -3707,10 +4220,41 @@ document.addEventListener('DOMContentLoaded', (event) => {
    }
    
    dsm_part2_form1.onclick = function() {
-     window.open("https://forms.office.com/r/L6biZWTxhp", '_blank');
-     toggleDisplay('reminder-one-moc', 'none');
-     dsm_part4_form1.classList.remove('overlay');
-     dsm_part2_form1.classList.remove('unlocked');
+      window.open("https://forms.office.com/r/L6biZWTxhp", '_blank');
+      toggleDisplay('reminder-one-moc', 'none');
+      dsm_part2_form_successful = 'true';
+      if (dsm_part2_form_successful === 'true'){
+        dsm_part4_form1.classList.remove('overlay');
+        dsm_part2_form1.classList.remove('unlocked');
+
+        for (let i = 0; i < dsm_username.options.length; i++) {
+          if (dsm_username.options[i].value !== 'dsm-moc') {
+            dsm_username.options[i].style.display = 'none';
+          } else {
+            dsm_username.options[i].style.display = 'block';
+          }
+        }
+
+        for (let i = 0; i < dsm_scd_number_moc.options.length; i++) {
+          if (dsm_scd_number.options[i].value !== 'dsm-1scd') {
+            dsm_scd_number_moc.options[i].style.display = 'none';
+          } else {
+            dsm_scd_number_moc.options[i].style.display = 'block';
+          }
+        }
+        
+        for (let i = 0; i < dsm_1scd_name_moc.options.length; i++) {
+          if (dsm_1scd_name_moc.options[i].value !== 'dsm-scd1') {
+            dsm_1scd_name_moc.options[i].style.display = 'none';
+          } else {
+            dsm_1scd_name_moc.options[i].style.display = 'block';
+          }
+        }
+      } else if (dsm_part2_form_successful === 'false') {
+          setTimeout(() => {
+            alert('Your TOA Part 2 is rejected. Please submit again.');
+          }, 1000);
+      }
    };
  
    function lockP4form1() {
@@ -3760,8 +4304,39 @@ document.addEventListener('DOMContentLoaded', (event) => {
    dsm_part2_form2.onclick = function() {
       window.open("https://forms.office.com/r/L6biZWTxhp", '_blank');
       toggleDisplay('reminder-two-moc', 'none');
-      dsm_part4_form2.classList.remove('overlay');
-      dsm_part2_form2.classList.remove('unlocked');
+      dsm_part2_form_successful = 'true';
+      if (dsm_part2_form_successful === 'true'){
+        dsm_part4_form2.classList.remove('overlay');
+        dsm_part2_form2.classList.remove('unlocked');
+
+        for (let i = 0; i < dsm_username.options.length; i++) {
+          if (dsm_username.options[i].value !== 'dsm-moc') {
+            dsm_username.options[i].style.display = 'none';
+          } else {
+            dsm_username.options[i].style.display = 'block';
+          }
+        }
+
+        for (let i = 0; i < dsm_scd_number_moc.options.length; i++) {
+          if (dsm_scd_number.options[i].value !== 'dsm-1scd') {
+            dsm_scd_number_moc.options[i].style.display = 'none';
+          } else {
+            dsm_scd_number_moc.options[i].style.display = 'block';
+          }
+        }
+        
+        for (let i = 0; i < dsm_1scd_name_moc.options.length; i++) {
+          if (dsm_1scd_name_moc.options[i].value !== 'dsm-scd2') {
+            dsm_1scd_name_moc.options[i].style.display = 'none';
+          } else {
+            dsm_1scd_name_moc.options[i].style.display = 'block';
+          }
+        }
+      } else if (dsm_part1_form_successful === 'false') {
+          setTimeout(() => {
+            alert('Your TOA Part 1 is rejected. Please submit again.');
+          }, 1000);
+      }
     };
  
    function lockPart4form2status() {
@@ -3816,8 +4391,39 @@ document.addEventListener('DOMContentLoaded', (event) => {
    dsm_part2_form3.onclick = function() {
       window.open("https://forms.office.com/r/L6biZWTxhp", '_blank');
       toggleDisplay('reminder-three-moc','none');
-      dsm_part4_form3.classList.remove('overlay');
-      dsm_part2_form3.classList.remove('unlocked');
+      dsm_part2_form_successful = 'true';
+      if (dsm_part2_form_successful === 'true'){
+        dsm_part4_form3.classList.remove('overlay');
+        dsm_part2_form3.classList.remove('unlocked');
+
+        for (let i = 0; i < dsm_username.options.length; i++) {
+          if (dsm_username.options[i].value !== 'dsm-moc') {
+            dsm_username.options[i].style.display = 'none';
+          } else {
+            dsm_username.options[i].style.display = 'block';
+          }
+        }
+
+        for (let i = 0; i < dsm_scd_number_moc.options.length; i++) {
+          if (dsm_scd_number.options[i].value !== 'dsm-1scd') {
+            dsm_scd_number_moc.options[i].style.display = 'none';
+          } else {
+            dsm_scd_number_moc.options[i].style.display = 'block';
+          }
+        }
+        
+        for (let i = 0; i < dsm_1scd_name_moc.options.length; i++) {
+          if (dsm_4scd_name_moc.options[i].value !== 'dsm-scd3') {
+            dsm_1scd_name_moc.options[i].style.display = 'none';
+          } else {
+            dsm_1scd_name_moc.options[i].style.display = 'block';
+          }
+        }
+      } else if (dsm_part2_form_successful === 'false') {
+          setTimeout(() => {
+            alert('Your TOA Part 2 is rejected. Please submit again.');
+          }, 1000);
+      }
    };
  
    function lockPart4form3status() {
@@ -3872,8 +4478,39 @@ document.addEventListener('DOMContentLoaded', (event) => {
    dsm_part2_form4.onclick = function() {
       window.open("https://forms.office.com/r/L6biZWTxhp", '_blank');
       toggleDisplay('reminder-four-moc', 'none');
-      dsm_part4_form4.classList.remove('overlay');
-      dsm_part2_form4.classList.remove('unlocked');
+      dsm_part2_form_successful = 'true';
+      if (dsm_part2_form_successful === 'true'){
+        dsm_part4_form4.classList.remove('overlay');
+        dsm_part2_form4.classList.remove('unlocked');
+
+        for (let i = 0; i < dsm_username.options.length; i++) {
+          if (dsm_username.options[i].value !== 'dsm-moc') {
+            dsm_username.options[i].style.display = 'none';
+          } else {
+            dsm_username.options[i].style.display = 'block';
+          }
+        }
+
+        for (let i = 0; i < dsm_scd_number_moc.options.length; i++) {
+          if (dsm_scd_number.options[i].value !== 'dsm-1scd') {
+            dsm_scd_number_moc.options[i].style.display = 'none';
+          } else {
+            dsm_scd_number_moc.options[i].style.display = 'block';
+          }
+        }
+        
+        for (let i = 0; i < dsm_1scd_name_moc.options.length; i++) {
+          if (dsm_1scd_name_moc.options[i].value !== 'dsm-scd4') {
+            dsm_1scd_name_moc.options[i].style.display = 'none';
+          } else {
+            dsm_1scd_name_moc.options[i].style.display = 'block';
+          }
+        }
+      } else if (dsm_part2_form_successful === 'false') {
+          setTimeout(() => {
+            alert('Your TOA Part 2 is rejected. Please submit again.');
+          }, 1000);
+      }
    };
  
    function lockPart4form4status() {
@@ -3928,8 +4565,39 @@ document.addEventListener('DOMContentLoaded', (event) => {
    dsm_part2_form5.onclick = function() {
       window.open("https://forms.office.com/r/L6biZWTxhp", '_blank');
       toggleDisplay('reminder-five-moc', 'none');
-      dsm_part4_form5.classList.remove('overlay');
-      dsm_part2_form5.classList.remove('unlocked');
+      dsm_part2_form_successful = 'true';
+      if (dsm_part2_form_successful === 'true'){
+        dsm_part4_form5.classList.remove('overlay');
+        dsm_part2_form5.classList.remove('unlocked');
+
+        for (let i = 0; i < dsm_username.options.length; i++) {
+          if (dsm_username.options[i].value !== 'dsm-moc') {
+            dsm_username.options[i].style.display = 'none';
+          } else {
+            dsm_username.options[i].style.display = 'block';
+          }
+        }
+
+        for (let i = 0; i < dsm_scd_number_moc.options.length; i++) {
+          if (dsm_scd_number.options[i].value !== 'dsm-2scd') {
+            dsm_scd_number_moc.options[i].style.display = 'none';
+          } else {
+            dsm_scd_number_moc.options[i].style.display = 'block';
+          }
+        }
+        
+        for (let i = 0; i < dsm_2scd_name_moc.options.length; i++) {
+          if (dsm_2scd_name_moc.options[i].value !== 'dsm-scd1-2') {
+            dsm_2scd_name_moc.options[i].style.display = 'none';
+          } else {
+            dsm_2scd_name_moc.options[i].style.display = 'block';
+          }
+        }
+      } else if (dsm_part2_form_successful === 'false') {
+          setTimeout(() => {
+            alert('Your TOA Part 2 is rejected. Please submit again.');
+          }, 1000);
+      }
    };
  
    function lockPart4form5status() {
@@ -3984,9 +4652,40 @@ document.addEventListener('DOMContentLoaded', (event) => {
    dsm_part2_form6.onclick = function() {
         window.open("https://forms.office.com/r/L6biZWTxhp", '_blank');
         toggleDisplay('reminder-six-moc', 'none');
+        dsm_part2_form_successful = 'true';
+      if (dsm_part2_form_successful === 'true'){
         dsm_part4_form6.classList.remove('overlay');
         dsm_part2_form6.classList.remove('unlocked');
-     };
+
+        for (let i = 0; i < dsm_username.options.length; i++) {
+          if (dsm_username.options[i].value !== 'dsm-moc') {
+            dsm_username.options[i].style.display = 'none';
+          } else {
+            dsm_username.options[i].style.display = 'block';
+          }
+        }
+
+        for (let i = 0; i < dsm_scd_number_moc.options.length; i++) {
+          if (dsm_scd_number.options[i].value !== 'dsm-2scd') {
+            dsm_scd_number_moc.options[i].style.display = 'none';
+          } else {
+            dsm_scd_number_moc.options[i].style.display = 'block';
+          }
+        }
+        
+        for (let i = 0; i < dsm_2scd_name_moc.options.length; i++) {
+          if (dsm_2scd_name_moc.options[i].value !== 'dsm-scd1-3') {
+            dsm_2scd_name_moc.options[i].style.display = 'none';
+          } else {
+            dsm_2scd_name_moc.options[i].style.display = 'block';
+          }
+        }
+      } else if (dsm_part2_form_successful === 'false') {
+          setTimeout(() => {
+            alert('Your TOA Part 2 is rejected. Please submit again.');
+          }, 1000);
+      }
+    };
  
    function lockPart4form6status() {
      dsm_part4_form6.classList.add('locked');
@@ -4040,8 +4739,39 @@ document.addEventListener('DOMContentLoaded', (event) => {
    dsm_part2_form7.onclick = function() {
       window.open("https://forms.office.com/r/L6biZWTxhp", '_blank');
       toggleDisplay('reminder-seven-moc', 'none');
-      dsm_part4_form7.classList.remove('overlay');
-      dsm_part2_form7.classList.remove('unlocked');
+      dsm_part2_form_successful = 'true';
+      if (dsm_part2_form_successful === 'true'){
+        dsm_part4_form7.classList.remove('overlay');
+        dsm_part2_form7.classList.remove('unlocked');
+
+        for (let i = 0; i < dsm_username.options.length; i++) {
+          if (dsm_username.options[i].value !== 'dsm-moc') {
+            dsm_username.options[i].style.display = 'none';
+          } else {
+            dsm_username.options[i].style.display = 'block';
+          }
+        }
+
+        for (let i = 0; i < dsm_scd_number_moc.options.length; i++) {
+          if (dsm_scd_number.options[i].value !== 'dsm-2scd') {
+            dsm_scd_number_moc.options[i].style.display = 'none';
+          } else {
+            dsm_scd_number_moc.options[i].style.display = 'block';
+          }
+        }
+        
+        for (let i = 0; i < dsm_2scd_name_moc.options.length; i++) {
+          if (dsm_2scd_name_moc.options[i].value !== 'dsm-scd1-4') {
+            dsm_2scd_name_moc.options[i].style.display = 'none';
+          } else {
+            dsm_2scd_name_moc.options[i].style.display = 'block';
+          }
+        }
+      } else if (dsm_part2_form_successful === 'false') {
+          setTimeout(() => {
+            alert('Your TOA Part 2 is rejected. Please submit again.');
+          }, 1000);
+      }
     }
 
    function lockPart4form7status() {
@@ -4096,8 +4826,39 @@ document.addEventListener('DOMContentLoaded', (event) => {
    dsm_part2_form8.onclick = function() {
       window.open("https://forms.office.com/r/L6biZWTxhp", '_blank');
       toggleDisplay('reminder-eight-moc','none');
-      dsm_part4_form8.classList.remove('overlay');
-      dsm_part2_form8.classList.remove('unlocked');
+      dsm_part2_form_successful = 'true';
+      if (dsm_part2_form_successful === 'true'){
+        dsm_part4_form8.classList.remove('overlay');
+        dsm_part2_form8.classList.remove('unlocked');
+
+        for (let i = 0; i < dsm_username.options.length; i++) {
+          if (dsm_username.options[i].value !== 'dsm-moc') {
+            dsm_username.options[i].style.display = 'none';
+          } else {
+            dsm_username.options[i].style.display = 'block';
+          }
+        }
+
+        for (let i = 0; i < dsm_scd_number_moc.options.length; i++) {
+          if (dsm_scd_number.options[i].value !== 'dsm-2scd') {
+            dsm_scd_number_moc.options[i].style.display = 'none';
+          } else {
+            dsm_scd_number_moc.options[i].style.display = 'block';
+          }
+        }
+        
+        for (let i = 0; i < dsm_2scd_name_moc.options.length; i++) {
+          if (dsm_2scd_name_moc.options[i].value !== 'dsm-scd2-3') {
+            dsm_2scd_name_moc.options[i].style.display = 'none';
+          } else {
+            dsm_2scd_name_moc.options[i].style.display = 'block';
+          }
+        }
+      } else if (dsm_part2_form_successful === 'false') {
+          setTimeout(() => {
+            alert('Your TOA Part 2 is rejected. Please submit again.');
+          }, 1000);
+      }
    }
  
    function lockPart4form8status() {
@@ -4152,8 +4913,39 @@ document.addEventListener('DOMContentLoaded', (event) => {
    dsm_part2_form9.onclick = function() {
       window.open("https://forms.office.com/r/L6biZWTxhp", '_blank');
       toggleDisplay('reminder-nine-moc', 'none');
-      dsm_part4_form9.classList.remove('overlay');
-      dsm_part2_form9.classList.remove('unlocked');
+      dsm_part2_form_successful = 'true';
+      if (dsm_part2_form_successful === 'true'){
+        dsm_part4_form9.classList.remove('overlay');
+        dsm_part2_form9.classList.remove('unlocked');
+
+        for (let i = 0; i < dsm_username.options.length; i++) {
+          if (dsm_username.options[i].value !== 'dsm-moc') {
+            dsm_username.options[i].style.display = 'none';
+          } else {
+            dsm_username.options[i].style.display = 'block';
+          }
+        }
+
+        for (let i = 0; i < dsm_scd_number_moc.options.length; i++) {
+          if (dsm_scd_number.options[i].value !== 'dsm-2scd') {
+            dsm_scd_number_moc.options[i].style.display = 'none';
+          } else {
+            dsm_scd_number_moc.options[i].style.display = 'block';
+          }
+        }
+        
+        for (let i = 0; i < dsm_2scd_name_moc.options.length; i++) {
+          if (dsm_2scd_name_moc.options[i].value !== 'dsm-scd2-4') {
+            dsm_2scd_name_moc.options[i].style.display = 'none';
+          } else {
+            dsm_2scd_name_moc.options[i].style.display = 'block';
+          }
+        }
+      } else if (dsm_part2_form_successful === 'false') {
+          setTimeout(() => {
+            alert('Your TOA Part 2 is rejected. Please submit again.');
+          }, 1000);
+      }
    }
  
    function lockPart4form9status() {
@@ -4208,8 +5000,39 @@ document.addEventListener('DOMContentLoaded', (event) => {
    dsm_part2_form10.onclick = function() {
       window.open("https://forms.office.com/r/L6biZWTxhp", '_blank');
       toggleDisplay('reminder-ten-moc', 'none');
-      dsm_part4_form10.classList.remove('overlay');
-      dsm_part2_form10.classList.remove('unlocked');
+      dsm_part2_form_successful = 'true';
+      if (dsm_part2_form_successful === 'true'){
+        dsm_part4_form10.classList.remove('overlay');
+        dsm_part2_form10.classList.remove('unlocked');
+
+        for (let i = 0; i < dsm_username.options.length; i++) {
+          if (dsm_username.options[i].value !== 'dsm-moc') {
+            dsm_username.options[i].style.display = 'none';
+          } else {
+            dsm_username.options[i].style.display = 'block';
+          }
+        }
+
+        for (let i = 0; i < dsm_scd_number_moc.options.length; i++) {
+          if (dsm_scd_number.options[i].value !== 'dsm-2scd') {
+            dsm_scd_number_moc.options[i].style.display = 'none';
+          } else {
+            dsm_scd_number_moc.options[i].style.display = 'block';
+          }
+        }
+        
+        for (let i = 0; i < dsm_2scd_name_moc.options.length; i++) {
+          if (dsm_2scd_name_moc.options[i].value !== 'dsm-scd3-4') {
+            dsm_2scd_name_moc.options[i].style.display = 'none';
+          } else {
+            dsm_2scd_name_moc.options[i].style.display = 'block';
+          }
+        }
+      } else if (dsm_part2_form_successful === 'false') {
+          setTimeout(() => {
+            alert('Your TOA Part 2 is rejected. Please submit again.');
+          }, 1000);
+      }
    }
  
    function lockPart4form10status() {
@@ -4264,8 +5087,39 @@ document.addEventListener('DOMContentLoaded', (event) => {
    dsm_part2_form11.onclick = function() {
       window.open("https://forms.office.com/r/L6biZWTxhp", '_blank');
       toggleDisplay('reminder-eleven-moc', 'none');
-      dsm_part4_form11.classList.remove('overlay');
-      dsm_part2_form11.classList.remove('unlocked');
+      dsm_part2_form_successful = 'true';
+      if (dsm_part2_form_successful === 'true'){
+        dsm_part4_form11.classList.remove('overlay');
+        dsm_part2_form11.classList.remove('unlocked');
+
+        for (let i = 0; i < dsm_username.options.length; i++) {
+          if (dsm_username.options[i].value !== 'dsm-moc') {
+            dsm_username.options[i].style.display = 'none';
+          } else {
+            dsm_username.options[i].style.display = 'block';
+          }
+        }
+
+        for (let i = 0; i < dsm_scd_number_moc.options.length; i++) {
+          if (dsm_scd_number.options[i].value !== 'dsm-3scd') {
+            dsm_scd_number_moc.options[i].style.display = 'none';
+          } else {
+            dsm_scd_number_moc.options[i].style.display = 'block';
+          }
+        }
+        
+        for (let i = 0; i < dsm_3scd_name_moc.options.length; i++) {
+          if (dsm_3scd_name_moc.options[i].value !== 'dsm-scd1-2-3') {
+            dsm_3scd_name_moc.options[i].style.display = 'none';
+          } else {
+            dsm_3scd_name_moc.options[i].style.display = 'block';
+          }
+        }
+      } else if (dsm_part2_form_successful === 'false') {
+          setTimeout(() => {
+            alert('Your TOA Part 2 is rejected. Please submit again.');
+          }, 1000);
+      }
    }
  
    function lockPart4form11status() {
@@ -4320,8 +5174,39 @@ document.addEventListener('DOMContentLoaded', (event) => {
    dsm_part2_form12.onclick = function() {
       window.open("https://forms.office.com/r/L6biZWTxhp", '_blank');
       toggleDisplay('reminder-twelve-moc', 'none');
-      dsm_part4_form12.classList.remove('overlay');
-      dsm_part2_form12.classList.remove('unlocked');
+      dsm_part2_form_successful = 'true';
+      if (dsm_part2_form_successful === 'true'){
+        dsm_part4_form12.classList.remove('overlay');
+        dsm_part2_form12.classList.remove('unlocked');
+
+        for (let i = 0; i < dsm_username.options.length; i++) {
+          if (dsm_username.options[i].value !== 'dsm-moc') {
+            dsm_username.options[i].style.display = 'none';
+          } else {
+            dsm_username.options[i].style.display = 'block';
+          }
+        }
+
+        for (let i = 0; i < dsm_scd_number_moc.options.length; i++) {
+          if (dsm_scd_number.options[i].value !== 'dsm-3scd') {
+            dsm_scd_number_moc.options[i].style.display = 'none';
+          } else {
+            dsm_scd_number_moc.options[i].style.display = 'block';
+          }
+        }
+        
+        for (let i = 0; i < dsm_3scd_name_moc.options.length; i++) {
+          if (dsm_3scd_name_moc.options[i].value !== 'dsm-scd1-2-4') {
+            dsm_3scd_name_moc.options[i].style.display = 'none';
+          } else {
+            dsm_3scd_name_moc.options[i].style.display = 'block';
+          }
+        }
+      } else if (dsm_part2_form_successful === 'false') {
+          setTimeout(() => {
+            alert('Your TOA Part 2 is rejected. Please submit again.');
+          }, 1000);
+      }
    }
  
    function lockPart4form12status() {
@@ -4376,8 +5261,39 @@ document.addEventListener('DOMContentLoaded', (event) => {
    dsm_part2_form13.onclick = function() {
       window.open("https://forms.office.com/r/L6biZWTxhp", '_blank');
       toggleDisplay('reminder-thirteen-moc', 'none');
-      dsm_part4_form13.classList.remove('overlay');
-      dsm_part2_form13.classList.remove('unlocked');
+      dsm_part2_form_successful = 'true';
+      if (dsm_part2_form_successful === 'true'){
+        dsm_part4_form13.classList.remove('overlay');
+        dsm_part2_form13.classList.remove('unlocked');
+
+        for (let i = 0; i < dsm_username.options.length; i++) {
+          if (dsm_username.options[i].value !== 'dsm-moc') {
+            dsm_username.options[i].style.display = 'none';
+          } else {
+            dsm_username.options[i].style.display = 'block';
+          }
+        }
+
+        for (let i = 0; i < dsm_scd_number_moc.options.length; i++) {
+          if (dsm_scd_number.options[i].value !== 'dsm-3scd') {
+            dsm_scd_number_moc.options[i].style.display = 'none';
+          } else {
+            dsm_scd_number_moc.options[i].style.display = 'block';
+          }
+        }
+        
+        for (let i = 0; i < dsm_3scd_name_moc.options.length; i++) {
+          if (dsm_3scd_name_moc.options[i].value !== 'dsm-scd1-3-4') {
+            dsm_3scd_name_moc.options[i].style.display = 'none';
+          } else {
+            dsm_3scd_name_moc.options[i].style.display = 'block';
+          }
+        }
+      } else if (dsm_part2_form_successful === 'false') {
+          setTimeout(() => {
+            alert('Your TOA Part 2 is rejected. Please submit again.');
+          }, 1000);
+      }
    }
  
    function lockPart4form13status() {
@@ -4432,8 +5348,39 @@ document.addEventListener('DOMContentLoaded', (event) => {
    dsm_part2_form14.onclick = function() {
       window.open("https://forms.office.com/r/L6biZWTxhp", '_blank');
       toggleDisplay('reminder-forteen-moc', 'none');
-      dsm_part4_form14.classList.remove('overlay');
-      dsm_part2_form14.classList.remove('unlocked');
+      dsm_part2_form_successful = 'true';
+      if (dsm_part2_form_successful === 'true'){
+        dsm_part4_form14.classList.remove('overlay');
+        dsm_part2_form14.classList.remove('unlocked');
+
+        for (let i = 0; i < dsm_username.options.length; i++) {
+          if (dsm_username.options[i].value !== 'dsm-moc') {
+            dsm_username.options[i].style.display = 'none';
+          } else {
+            dsm_username.options[i].style.display = 'block';
+          }
+        }
+
+        for (let i = 0; i < dsm_scd_number_moc.options.length; i++) {
+          if (dsm_scd_number.options[i].value !== 'dsm-3scd') {
+            dsm_scd_number_moc.options[i].style.display = 'none';
+          } else {
+            dsm_scd_number_moc.options[i].style.display = 'block';
+          }
+        }
+        
+        for (let i = 0; i < dsm_3scd_name_moc.options.length; i++) {
+          if (dsm_3scd_name_moc.options[i].value !== 'dsm-scd2-3-4') {
+            dsm_3scd_name_moc.options[i].style.display = 'none';
+          } else {
+            dsm_3scd_name_moc.options[i].style.display = 'block';
+          }
+        }
+      } else if (dsm_part2_form_successful === 'false') {
+          setTimeout(() => {
+            alert('Your TOA Part 2 is rejected. Please submit again.');
+          }, 1000);
+      }
    }
  
    function lockPart4form14status() {
@@ -4488,8 +5435,39 @@ document.addEventListener('DOMContentLoaded', (event) => {
    dsm_part2_form15.onclick = function() {
       window.open("https://forms.office.com/r/L6biZWTxhp", '_blank');
       toggleDisplay('reminder-fifteen-moc', 'none');
-      dsm_part4_form15.classList.remove('overlay');
-      dsm_part2_form15.classList.remove('unlocked');
+      dsm_part2_form_successful = 'true';
+      if (dsm_part2_form_successful === 'true'){
+        dsm_part4_form8.classList.remove('overlay');
+        dsm_part2_form8.classList.remove('unlocked');
+
+        for (let i = 0; i < dsm_username.options.length; i++) {
+          if (dsm_username.options[i].value !== 'dsm-moc') {
+            dsm_username.options[i].style.display = 'none';
+          } else {
+            dsm_username.options[i].style.display = 'block';
+          }
+        }
+
+        for (let i = 0; i < dsm_scd_number_moc.options.length; i++) {
+          if (dsm_scd_number.options[i].value !== 'dsm-4scd') {
+            dsm_scd_number_moc.options[i].style.display = 'none';
+          } else {
+            dsm_scd_number_moc.options[i].style.display = 'block';
+          }
+        }
+        
+        for (let i = 0; i < dsm_4scd_name_moc.options.length; i++) {
+          if (dsm_4scd_name_moc.options[i].value !== 'dsm-scd1-2-3-4') {
+            dsm_4scd_name_moc.options[i].style.display = 'none';
+          } else {
+            dsm_4scd_name_moc.options[i].style.display = 'block';
+          }
+        }
+      } else if (dsm_part2_form_successful === 'false') {
+          setTimeout(() => {
+            alert('Your TOA Part 2 is rejected. Please submit again.');
+          }, 1000);
+      }
    }
  
    function lockPart4form15status() {
