@@ -77,21 +77,18 @@ This website was designed to streamline access to updates by integrating Telegra
 6. Change from Command Prompt (default) to Git Bash
 7. Enter "git add ." (it is need to add the full stop) to update the changes you have made
 8. Return to GitHub Desktop
-9. Navigate to the bottom left of the screen where you can sea box with these three prompts:
-- Summary
-- Description
-- Blue button with "Commit to Main" text
+9. Navigate to the bottom left of the screen where you can sea box with these three prompts - Summary, Description, Blue button with "Commit to Main" text
 10. Make any necessary changes to the Summary prompt:
-- If it is labelled "Summary(required)", please renamed it with update [your filename]
-- If it is labelled "Update [filename]", do NOT renamed it
+10.1. If it is labelled "Summary(required)", please renamed it with update [your filename]
+10.2. If it is labelled "Update [filename]", do NOT renamed it
 11. Click on "Commit to Main" button
 12. Click on "Push origin" once being prompted
 13. Return to GitHub Website
 14. Wait for your "push" commits to be successful
-- You may need to refresh to see if the commit is successful
-- This can be seen beside "SMRT-CCL" username and under your files
-- Pending: it will be shown as an orange colour circle
-- Successful: it will be shown as ✔
+14.1. You may need to refresh website to see if the commit went through
+14.2. This can be seen beside "SMRT-CCL" username and under your files
+14.3. Pending: it will be shown as an orange colour circle
+14.4. Successful: it will be shown as ✔
 15. Refresh the GitHub website
 16. Close the "https://smrt-ccl.github.io/Circle-Line/" tab
 17. Open "https://smrt-ccl.github.io/Circle-Line/" again
