@@ -2884,7 +2884,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
   dsm_part1_form1.onclick = function() {
     window.open("https://forms.office.com/r/5ywqqfF3MV", '_blank');
     toggleDisplay('reminder-one', 'none');
-    dsm_part1_form_successful = 'true';
+    dsm_part1_form_successful = 'false';
     if (dsm_part1_form_successful === 'true'){
       dsm_part3_form1.classList.remove('overlay');
       dsm_part1_form1.classList.remove('unlocked');
